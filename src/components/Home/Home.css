@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 100px 20px; /* leave space for fixed header */
+  padding: 10px 20px; /* leave space for fixed header */
+  margin-top: 30px;
   box-sizing: border-box;
   background-color: var(--navy, #0a192f);
 }
@@ -30,7 +31,8 @@
   font-family: var(--font-mono);
   font-size: clamp(14px, 5vw, 16px);
   color: var(--secondary-color);
-  margin: 0 0 20px 4px;
+  margin: 0 0 0px 4px;
+  
 }
 
 .name {
@@ -38,6 +40,9 @@
   color: var(--light-slate);
   font-weight: 600;
   margin: 0;
+  line-height: 1;
+  font-family: var(--font-mono);
+  text-align: left;
 }
 
 .subtitle {
@@ -46,14 +51,17 @@
   font-weight: 600;
   margin: 0;
   line-height: 1;
+  font-family: var(--font-mono);
 }
 
 .intro-text {
-  max-width: 540px;
+  max-width: 640px;
   margin: 20px 0 0;
   color: var(--slate);
   line-height: 1.5;
   text-align: left;
+  font-size: 15px;
+  font-family: var(--font-mono);
 }
 
 /* ---------- CTA Button ---------- */
@@ -69,10 +77,12 @@
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
-  width: 220px;
-  margin: 40px 0 0;
-  display: block;
+  width: 160px;
+  margin: 30px 140px 0;
+  display: flex;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   transition: all 0.25s ease-in-out;
 }
 
@@ -131,6 +141,12 @@
 @media (max-width: 1024px) {
   .home-content {
     gap: 30px;
+  }
+  .greeting {
+    text-align: center;
+  }
+  .name {
+    text-align: center;
   }
 }
 

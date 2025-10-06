@@ -1,0 +1,72 @@
+.projects-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  position: relative;
+  margin-top: 50px;
+}
+
+.project-card {
+  background-color: #112240; /* Lighter Navy */
+  border-radius: 4px;
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+}
+
+.project-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.75rem;
+  height: 100%;
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.folder-icon,
+.external-link {
+  color: var(--secondary-color);
+  /* Replace with actual SVG icons */
+  font-family: var(--font-mono);
+}
+
+.project-title {
+  margin: 0 0 10px;
+  color: var(--light-slate);
+  font-size: 1.4rem;
+}
+
+.project-description {
+  color: var(--slate);
+  font-size: 0.95rem;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--slate);
+}
+
+.project-tech-list li {
+  margin-right: 15px;
+  line-height: 1.75;
+}

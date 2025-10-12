@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
 import './Header.css';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  // Header should be visible immediately
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0 });
+  const [logoRef, logoVisible] = useScrollAnimation({ threshold: 0 });
+  const [menuRef, menuVisible] = useScrollAnimation({ threshold: 0 });
+  const [navRef, navVisible] = useScrollAnimation({ threshold: 0 });
 
   return (
-    <header className="header">
+    <header 
+      ref={headerRef}
+      className={`header scroll-slide-top ${headerVisible ? 'visible' : ''}`}
+    >
       <nav className="nav">
-        <div className="logo">
+        <div 
+          ref={logoRef}
+          className={`logo scroll-fade-in ${logoVisible ? 'visible' : ''}`}
+        >
           <a href="#home">MyPortfolio</a>
         </div>
 
         {/* Hamburger Icon */}
         <div
-          className={`menu-toggle ${menuOpen ? 'active' : ''}`}
+          ref={menuRef}
+          className={`menu-toggle scroll-scale-in ${menuOpen ? 'active' : ''} ${menuVisible ? 'visible' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span></span>
@@ -21,12 +34,15 @@ const Header = () => {
           <span></span>
         </div>
 
-        <ul className={`nav-list ${menuOpen ? 'active' : ''}`}>
-          <li className="nav-item"><a href="#about">About</a></li>
-          <li className="nav-item"><a href="#skills">Skills</a></li>
-          <li className="nav-item"><a href="#projects">Projects</a></li>
-          <li className="nav-item"><a href="#credentials">Credentials</a></li>
-          <li className="nav-item"><a href="#contact">Contact</a></li>
+        <ul 
+          ref={navRef}
+          className={`nav-list scroll-slide-right ${menuOpen ? 'active' : ''} ${navVisible ? 'visible' : ''}`}
+        >
+          <li className="nav-item scroll-fade-in"><a href="#about">About</a></li>
+          <li className="nav-item scroll-fade-in"><a href="#skills">Skills</a></li>
+          <li className="nav-item scroll-fade-in"><a href="#projects">Projects</a></li>
+          <li className="nav-item scroll-fade-in"><a href="#credentials">Credentials</a></li>
+          <li className="nav-item scroll-fade-in"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>

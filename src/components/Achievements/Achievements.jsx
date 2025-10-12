@@ -1,5 +1,6 @@
 import React from 'react';
 import './Achievements.css';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const Credentials = () => {
   const credentialData = [
@@ -25,15 +26,26 @@ const Credentials = () => {
     }
   ];
 
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [gridRef, gridVisible] = useScrollAnimation();
+
   return (
     <section id="credentials" className="credentials-section">
-      <h2 className="section-title">My Credentials</h2>
-      <div className="credentials-grid">
+      <h2 
+        ref={titleRef}
+        className={`section-title scroll-slide-top ${titleVisible ? 'visible' : ''}`}
+      >
+        My Credentials
+      </h2>
+      <div 
+        ref={gridRef}
+        className={`credentials-grid ${gridVisible ? 'visible' : ''}`}
+      >
         {credentialData.map((item, index) => (
-          <div key={index} className="credential-card">
-            <div className="credential-type">{item.type}</div>
-            <h3 className="credential-title">{item.title}</h3>
-            <p className="credential-source">{item.source}</p>
+          <div key={index} className="credential-card scroll-bounce-in">
+            <div className="credential-type scroll-fade-in">{item.type}</div>
+            <h3 className="credential-title scroll-slide-left">{item.title}</h3>
+            <p className="credential-source scroll-fade-in">{item.source}</p>
           </div>
         ))}
       </div>

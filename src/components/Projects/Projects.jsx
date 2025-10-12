@@ -1,5 +1,6 @@
 import React from 'react';
 import './Projects.css';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const Projects = () => {
   const projectData = [
@@ -18,27 +19,38 @@ const Projects = () => {
     // }
   ];
 
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [gridRef, gridVisible] = useScrollAnimation();
+
   return (
     <section id="projects" className="projects-section">
-      <h2 className="section-title">Some Things I’ve Built</h2>
-      <div className="projects-grid">
+      <h2 
+        ref={titleRef}
+        className={`section-title scroll-slide-top ${titleVisible ? 'visible' : ''}`}
+      >
+        Some Things I've Built
+      </h2>
+      <div 
+        ref={gridRef}
+        className={`projects-grid ${gridVisible ? 'visible' : ''}`}
+      >
         {projectData.map((project, index) => (
-          <div key={index} className="project-card">
+          <div key={index} className="project-card scroll-scale-in">
             <div className="project-inner">
               <header>
-                <div className="project-top">
+                <div className="project-top scroll-fade-in">
                   <div className="folder-icon">// Folder Icon</div>
                   <a href={project.link} className="external-link" target="_blank" rel="noopener noreferrer">// Link Icon</a>
                 </div>
-                <h3 className="project-title">{project.title}</h3>
-                <div className="project-description">
+                <h3 className="project-title scroll-slide-left">{project.title}</h3>
+                <div className="project-description scroll-fade-in">
                   <p>{project.description}</p>
                 </div>
               </header>
               <footer>
                 <ul className="project-tech-list">
                   {project.tech.map((tech, i) => (
-                    <li key={i}>{tech}</li>
+                    <li key={i} className="scroll-pop-in">{tech}</li>
                   ))}
                 </ul>
               </footer>

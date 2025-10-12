@@ -4,13 +4,12 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 10px 20px; /* leave space for fixed header */
+  padding: 10px 20px; 
   margin-top: 30px;
   box-sizing: border-box;
   background-color: var(--navy, #0a192f);
 }
 
-/* Flex container: text left, image right */
 .home-content {
   display: flex;
   align-items: center;
@@ -32,7 +31,6 @@
   font-size: clamp(14px, 5vw, 16px);
   color: var(--secondary-color);
   margin: 0 0 0px 4px;
-  
 }
 
 .name {
@@ -52,13 +50,6 @@
   margin: 0;
   line-height: 1;
   font-family: var(--font-mono);
-}
-
-.profile-image {
-  width: 240px;
-  height: 240px;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .intro-text {
@@ -116,7 +107,6 @@
 .image-placeholder {
   width: 100%;
   height: 100%;
-  /* padding-top: 100%; */
   background-color: var(--secondary-color);
   border-radius: 4px;
   position: relative;
@@ -149,28 +139,60 @@
   transition: 0.3s;
 }
 
+.profile-image {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Animation ---------- */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 1s ease-out forwards;
+  animation-delay: 0.3s; /* staggered delay for text */
+}
+
 /* ---------- Responsive Design ---------- */
 @media (max-width: 1024px) {
-  .home-content {
-    gap: 30px;
-  }
-  .greeting {
-    text-align: center;
-  }
-  .name {
-    text-align: center;
-  }
+  .home-content { gap: 30px; }
+  .greeting, .name { text-align: center; }
 }
 
 @media (max-width: 768px) {
   .home-content {
-    flex-direction: column; /* stack vertically */
+    flex-direction: column; 
     align-items: center;
     text-align: center;
   }
 
   .about-image {
-    order: -1; /* image on top */
+    order: -1; 
     margin-bottom: 30px;
   }
 
@@ -189,16 +211,7 @@
 }
 
 @media (max-width: 480px) {
-  .name {
-    font-size: clamp(30px, 8vw, 50px);
-  }
-
-  .subtitle {
-    font-size: clamp(24px, 7vw, 40px);
-  }
-
-  .cta-button {
-    width: 180px;
-    padding: 1rem 1.5rem;
-  }
+  .name { font-size: clamp(30px, 8vw, 50px); }
+  .subtitle { font-size: clamp(24px, 7vw, 40px); }
+  .cta-button { width: 180px; padding: 1rem 1.5rem; }
 }

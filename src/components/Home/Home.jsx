@@ -7,7 +7,7 @@ const Home = () => {
       <div className="home-content">
 
         {/* Left side - Image */}
-        <div className="about-image">
+        <div className="about-image slide-in-left">
           <div className="image-wrapper">
             <div className="image-placeholder">
               <img src="/babu_image.jpg" alt="Profile" className="profile-image" />
@@ -15,9 +15,8 @@ const Home = () => {
           </div>
         </div>
 
-
         {/* Right side - Text */}
-        <div className="text-content">
+        <div className="text-content slide-in-right">
           <h1 className="greeting">Hi, my name is</h1>
           <h2 className="name">Babu B</h2>
           <h3 className="subtitle">Java Full Stack Developer</h3>

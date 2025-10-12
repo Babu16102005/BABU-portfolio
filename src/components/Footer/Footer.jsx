@@ -1,15 +1,29 @@
 import React from 'react';
 import './Footer.css';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const Footer = () => {
+  const [footerRef, footerVisible] = useScrollAnimation();
+  const [linksRef, linksVisible] = useScrollAnimation();
+  const [copyrightRef, copyrightVisible] = useScrollAnimation();
+
   return (
-    <footer className="footer">
-      <div className="social-links">
-        <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+    <footer 
+      ref={footerRef}
+      className={`footer scroll-slide-bottom ${footerVisible ? 'visible' : ''}`}
+    >
+      <div 
+        ref={linksRef}
+        className={`social-links ${linksVisible ? 'visible' : ''}`}
+      >
+        <a href="#" target="_blank" rel="noopener noreferrer" className="scroll-fade-in">GitHub</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" className="scroll-fade-in">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" className="scroll-fade-in">Twitter</a>
       </div>
-      <div className="copyright">
+      <div 
+        ref={copyrightRef}
+        className={`copyright scroll-fade-in ${copyrightVisible ? 'visible' : ''}`}
+      >
         Designed & Built by Your Name
       </div>
     </footer>

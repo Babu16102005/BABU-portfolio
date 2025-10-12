@@ -31,7 +31,7 @@ const Home = () => {
             Building interactive web apps with modern technologies. Focused on Problem Solving,
             Clean Code, Smart Design, and seamless user experience.
           </p>
-          <a href="#contact" className="cta-button">Get In Touch</a>
+          {/* <a href="#contact" className="cta-button">Get In Touch</a> */}
         </div>
 
       </div>

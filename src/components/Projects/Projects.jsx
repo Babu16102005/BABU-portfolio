@@ -9,6 +9,7 @@ const Projects = () => {
         'A comprehensive AI-driven career guidance system designed to help individuals make informed career decisions by holistically assessing their aptitude, interests, skills, and potential career trajectories.',
       tech: ['React js', 'Fast API', 'Firebase'],
       link: '#',
+      domain:"Smart Education"
     },
     // You can add more projects here
   ];
@@ -47,20 +48,21 @@ const Projects = () => {
             <div className="project-inner">
               <header>
                 <div className="project-top">
-                  <div className="folder-icon">// Folder Icon</div>
+                  {/* <div className="folder-icon">// Folder Icon</div> */}
                   <a
                     href={project.link}
                     className="external-link"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    // Link Icon
+                    {/* // Link Icon */}
                   </a>
                 </div>
                 <h3 className="project-title">{project.title}</h3>
                 <div className="project-description">
                   <p>{project.description}</p>
                 </div>
+                <p className="project-domain"><strong>Domain:</strong> {project.domain}</p>
               </header>
               <footer>
                 <ul className="project-tech-list">

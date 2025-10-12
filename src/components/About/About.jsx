@@ -8,26 +8,22 @@ const About = () => {
       <div className="about-content-grid">
         <div className="about-text">
           <p>
-            Hello! I'm a dedicated and passionate web developer with a knack for creating elegant and efficient solutions. I have a strong foundation in front-end technologies and a love for learning and applying new skills to build beautiful, responsive, and user-friendly websites.
+          Currently pursuing B.Tech in Information Technology, I am a passionate 
+          learner interested in Full Stack Development and Data Analysis. I enjoy
+           solving complex problems, creating impactful solutions, and continuously
+            upgrading my skills to stay aligned with the latest technological trends.
           </p>
           <p>
             Here are a few technologies I’ve been working with recently:
           </p>
           <ul className="skills-list-about">
-            <li>JavaScript (ES6+)</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>HTML & (S)CSS</li>
-            <li>Python</li>
-            <li>Django</li>
+            <li>Java</li>
+            <li>React js</li>
+            <li>Spring Boot</li>
+            <li>HTML & CSS</li>
+            <li>MongoDB</li>
           </ul>
         </div>
-        {/* <div className="about-image">
-          <div className="image-wrapper">
-           
-            <div className="image-placeholder"></div>
-          </div>
-        </div> */}
       </div>
     </section>
   );

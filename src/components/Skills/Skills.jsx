@@ -10,6 +10,8 @@ const Skills = () => {
   return (
     <section id="skills" className="skills-section">
       <h2 className="section-title">My Skills</h2>
+      <p>
+  In Technical and Industry point of view what I have learned,</p>
       <ul className="skills-list">
         {skills.map((skill, index) => (
           <li key={index}>{skill}</li>

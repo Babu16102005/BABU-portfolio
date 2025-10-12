@@ -22,11 +22,11 @@
   background-color: var(--dark-slate);
 }
 
-.about-content-grid {
+/* .about-content-grid {
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 50px;
-}
+} */
 
 .about-text p {
   margin: 0 0 15px;

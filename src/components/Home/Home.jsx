@@ -19,10 +19,7 @@ const Home = () => {
           <h2 className="name">Babu B</h2>
           <h3 className="subtitle">Java Full Stack Developer</h3>
           <p className="intro-text">
-          Currently pursuing B.Tech in Information Technology, I am a passionate 
-          learner interested in Full Stack Development and Data Analysis. I enjoy
-           solving complex problems, creating impactful solutions, and continuously
-            upgrading my skills to stay aligned with the latest technological trends.
+          
           </p>
           <a href="#contact" className="cta-button">Get In Touch</a>
         </div>

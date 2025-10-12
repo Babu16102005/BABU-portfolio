@@ -18,6 +18,8 @@
   width: 100%;
   gap: 40px;
   flex-wrap: nowrap;
+  margin-top: 50px;
+
 }
 
 /* ---------- Text Content ---------- */
@@ -58,7 +60,7 @@
   color: var(--slate);
   line-height: 1.5;
   text-align: left;
-  font-size: 15px;
+  font-size: 20px;
   font-family: var(--font-mono);
 }
 
@@ -94,7 +96,7 @@
   display: flex;
   justify-content: center;
   border-radius: 50%;
-}
+  }
 
 .image-wrapper {
   position: relative;

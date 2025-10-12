@@ -21,7 +21,7 @@ const Home = () => {
           <h2 className="name">Babu B</h2>
           <h3 className="subtitle">Java Full Stack Developer</h3>
           <p className="intro-text">
-            Building interactive web apps with modern technologies. Focused on clean code, smart design, and seamless user experience.
+            Building interactive web apps with modern technologies. Focused on Problem Solving , Clean code, Smart design, and seamless user experience.
           </p>
           <a href="#contact" className="cta-button">Get In Touch</a>
         </div>

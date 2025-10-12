@@ -1,6 +1,5 @@
 import React from 'react';
 import './Projects.css';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const Projects = () => {
   const projectData = [
@@ -10,47 +9,30 @@ const Projects = () => {
       tech: ['React js', 'Fast API', 'Firebase'],
       link: '#'
     }
-    // ,
-    // {
-    //   title: 'Project Two',
-    //   description: 'A brief description of the second project. This was a personal exploration into data visualization and API integration.',
-    //   tech: ['JavaScript (ES6+)', 'D3.js', 'CSS Grid'],
-    //   link: '#'
-    // }
+    // You can add more projects here
   ];
-
-  const [titleRef, titleVisible] = useScrollAnimation();
-  const [gridRef, gridVisible] = useScrollAnimation();
 
   return (
     <section id="projects" className="projects-section">
-      <h2 
-        ref={titleRef}
-        className={`section-title scroll-slide-top ${titleVisible ? 'visible' : ''}`}
-      >
-        Some Things I've Built
-      </h2>
-      <div 
-        ref={gridRef}
-        className={`projects-grid ${gridVisible ? 'visible' : ''}`}
-      >
+      <h2 className="section-title">Some Things I've Built</h2>
+      <div className="projects-grid">
         {projectData.map((project, index) => (
-          <div key={index} className="project-card scroll-scale-in">
+          <div key={index} className="project-card">
             <div className="project-inner">
               <header>
-                <div className="project-top scroll-fade-in">
+                <div className="project-top">
                   <div className="folder-icon">// Folder Icon</div>
                   <a href={project.link} className="external-link" target="_blank" rel="noopener noreferrer">// Link Icon</a>
                 </div>
-                <h3 className="project-title scroll-slide-left">{project.title}</h3>
-                <div className="project-description scroll-fade-in">
+                <h3 className="project-title">{project.title}</h3>
+                <div className="project-description">
                   <p>{project.description}</p>
                 </div>
               </header>
               <footer>
                 <ul className="project-tech-list">
                   {project.tech.map((tech, i) => (
-                    <li key={i} className="scroll-pop-in">{tech}</li>
+                    <li key={i}>{tech}</li>
                   ))}
                 </ul>
               </footer>

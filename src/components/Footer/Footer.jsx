@@ -1,34 +1,23 @@
 import React from 'react';
 import './Footer.css';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+
 
 const Footer = () => {
-  const [footerRef, footerVisible] = useScrollAnimation();
-  const [linksRef, linksVisible] = useScrollAnimation();
-  const [copyrightRef, copyrightVisible] = useScrollAnimation();
-
   return (
-    <footer 
-      ref={footerRef}
-      className={`footer scroll-slide-bottom ${footerVisible ? 'visible' : ''}`}
-    >
-      <div 
-        ref={linksRef}
-        className={`social-links ${linksVisible ? 'visible' : ''}`}
-      >
-        <a href="#" target="_blank" rel="noopener noreferrer" className="scroll-fade-in">GitHub</a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="scroll-fade-in">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="scroll-fade-in">Twitter</a>
+    <footer className="footer">
+      <div className="social-links">
+        <a href="https://github.com/Babu16102005" target="_blank" rel="noopener noreferrer"><FaGithub size={50} />
+</a>
+        <a href="https://www.linkedin.com/in/babu-b-395608299" target="_blank" rel="noopener noreferrer"><FaLinkedin size={50} />
+</a>
+        <a href="https://wa.me/6381837277" target="_blank" rel="noopener noreferrer"><FaWhatsapp size={50} /></a>
       </div>
-      <div 
-        ref={copyrightRef}
-        className={`copyright scroll-fade-in ${copyrightVisible ? 'visible' : ''}`}
-      >
-        Designed & Built by Your Name
+      <div className="copyright">
+        Designed & Built by Babu B
       </div>
     </footer>
   );
 };
 
 export default Footer;
-

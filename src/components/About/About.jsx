@@ -1,52 +1,36 @@
 import React from 'react';
 import './About.css';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
+import { DiJava, DiReact, DiMongodb, DiHtml5, DiCss3 } from 'react-icons/di';
+import { SiSpringboot } from 'react-icons/si';
 
 const About = () => {
-  const [titleRef, titleVisible] = useScrollAnimation();
-  const [contentRef, contentVisible] = useScrollAnimation();
-  const [p1Ref, p1Visible] = useScrollAnimation();
-  const [p2Ref, p2Visible] = useScrollAnimation();
-  const [listRef, listVisible] = useScrollAnimation();
-
   return (
     <section id="about" className="about-section">
-      <h2 
-        ref={titleRef}
-        className={`section-title scroll-slide-top ${titleVisible ? 'visible' : ''}`}
-      >
-        About Me
-      </h2>
+      <h2 className="section-title">About Me</h2>
+
       <div className="about-content-grid">
-        <div 
-          ref={contentRef}
-          className={`about-text scroll-slide-left ${contentVisible ? 'visible' : ''}`}
-        >
-          <p 
-            ref={p1Ref}
-            className={`scroll-fade-in ${p1Visible ? 'visible' : ''}`}
-          >
-          Currently pursuing B.Tech in Information Technology, I am a passionate 
-          learner interested in Full Stack Development and Data Analysis. I enjoy
-           solving complex problems, creating impactful solutions, and continuously
-            upgrading my skills to stay aligned with the latest technological trends.
+        <div className="about-text">
+          <p className='para'>
+            I'm <span className='glow-text'>Babu B</span>, currently focused on <span className='glow-text'>Java Full Stack Development</span>.
+            I have a strong passion for technology and problem-solving,
+            always eager to tackle challenges and build meaningful solutions.
           </p>
-          <p 
-            ref={p2Ref}
-            className={`scroll-fade-in ${p2Visible ? 'visible' : ''}`}
-          >
-            Here are a few technologies I've been working with recently:
-          </p>
-          <ul 
-            ref={listRef}
-            className={`skills-list-about ${listVisible ? 'visible' : ''}`}
-          >
-            <li className="scroll-pop-in">Java</li>
-            <li className="scroll-pop-in">React js</li>
-            <li className="scroll-pop-in">Spring Boot</li>
-            <li className="scroll-pop-in">HTML & CSS</li>
-            <li className="scroll-pop-in">MongoDB</li>
-          </ul>
+
+          <p>
+            As a <span className='glow-text'>fast learner</span> and enthusiastic developer, I continuously expand my
+            skills across front-end and back-end technologies,
+            including <span className='glow-text'>Java</span>, <span className='glow-text'>React</span>, <span className='glow-text'>Spring Boot</span>, and <span className='glow-text'>MongoDB</span>. I thrive in collaborative
+            environments and enjoy creating projects that combine creativity with
+            technical expertise        
+              </p>
+              <p>
+                Beyond coding, I am committed to improving my skills, exploring new technologies,
+                 and contributing to impactful projects that make a difference.
+              </p>
+
+          {/* <ul className="skills-list-about">
+            
+          </ul> */}
         </div>
       </div>
     </section>

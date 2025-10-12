@@ -1,25 +1,52 @@
 .projects-section {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 100px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.projects-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  font-size: clamp(26px, 5vw, 32px);
+  color: var(--light-slate);
+  font-family: var(--font-mono);
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.projects-section.visible .section-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 15px;
-  position: relative;
   margin-top: 50px;
 }
 
 .project-card {
-  background-color: #112240; /* Lighter Navy */
+  background-color: #112240;
   border-radius: 4px;
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform: translateY(40px);
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.project-card:hover {
-  transform: translateY(-7px);
+.projects-section.visible .project-card {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-inner {
@@ -40,7 +67,6 @@
 .folder-icon,
 .external-link {
   color: var(--secondary-color);
-  /* Replace with actual SVG icons */
   font-family: var(--font-mono);
 }
 

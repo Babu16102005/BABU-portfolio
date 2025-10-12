@@ -217,3 +217,36 @@
   .subtitle { font-size: clamp(24px, 7vw, 40px); }
   .cta-button { width: 180px; padding: 1rem 1.5rem; }
 }
+/* ---------- Smooth Pop-up Animation ---------- */
+@keyframes popUpDown {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px 20px;
+  background-color: var(--navy, #0a192f);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+.home-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pop-up {
+  animation: popUpDown 1s ease-out forwards;
+  animation-delay: 0.2s;
+}

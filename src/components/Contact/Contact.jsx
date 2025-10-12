@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+          observer.disconnect(); // trigger once
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="contact" className="contact-section">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className={`contact-section ${visible ? 'visible' : ''}`}
+    >
       <h2 className="section-title">What's Next?</h2>
       <h3 className="contact-subtitle">Get In Touch</h3>
       <p>

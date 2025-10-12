@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Achievements.css';
 
 const Credentials = () => {
@@ -6,31 +6,53 @@ const Credentials = () => {
     {
       type: 'Achievement',
       title: 'We won the First prize🏆 in the Vision X (Paper Presentation) in DOTZ.V12 in the UCET.',
-      source: 'UCET'
+      source: 'UCET',
     },
     {
       type: 'Certification',
       title: 'Java Programming Fundamentals course',
-      source: 'Springboard, Infosys'
+      source: 'Springboard, Infosys',
     },
     {
-      type: 'Achievement',
-      title: 'Published a technical article on a popular blog',
-      source: 'Dev.to'
-    },
-    {
-      type: 'Certification',
-      title: 'Advanced CSS and Sass',
-      source: 'Udemy, 2022'
+      type: 'Project',
+      title: 'Career Guidance System',
+      source: 'Team work project',
     }
+   
   ];
 
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+          observer.disconnect(); // trigger once
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="credentials" className="credentials-section">
+    <section
+      id="credentials"
+      ref={sectionRef}
+      className={`credentials-section ${visible ? 'visible' : ''}`}
+    >
       <h2 className="section-title">My Credentials</h2>
       <div className="credentials-grid">
         {credentialData.map((item, index) => (
-          <div key={index} className="credential-card">
+          <div
+            key={index}
+            className="credential-card"
+            style={{ transitionDelay: `${0.3 + index * 0.2}s` }}
+          >
             <div className="credential-type">{item.type}</div>
             <h3 className="credential-title">{item.title}</h3>
             <p className="credential-source">{item.source}</p>

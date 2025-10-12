@@ -5,13 +5,13 @@ const Credentials = () => {
   const credentialData = [
     {
       type: 'Achievement',
-      title: 'Winner of the Annual Hackathon 2023',
-      source: 'TechCrunch'
+      title: 'we won the First prize🏆 in the Vision X (Paper Presentation) in DOTZ.V12 in the UCET.',
+      source: 'UCET'
     },
     {
       type: 'Certification',
-      title: 'Certified React Developer',
-      source: 'React Training Institute, 2023'
+      title: 'Java Programming Fundamentals course',
+      source: 'Springboard , Infosys'
     },
     {
       type: 'Achievement',

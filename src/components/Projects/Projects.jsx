@@ -4,17 +4,18 @@ import './Projects.css';
 const Projects = () => {
   const projectData = [
     {
-      title: 'Project One',
-      description: 'A brief description of the first project, highlighting the technologies used and its purpose. Built with a focus on performance and accessibility.',
-      tech: ['React', 'Node.js', 'Express'],
-      link: '#'
-    },
-    {
-      title: 'Project Two',
-      description: 'A brief description of the second project. This was a personal exploration into data visualization and API integration.',
-      tech: ['JavaScript (ES6+)', 'D3.js', 'CSS Grid'],
+      title: 'Career Guidance System',
+      description: 'A comprehensive AI-driven career guidance system designed to help individuals make informed career decisions by holistically assessing their aptitude, interests, skills, and potential career trajectories.',
+      tech: ['React js', 'Fast API', 'Firebase'],
       link: '#'
     }
+    // ,
+    // {
+    //   title: 'Project Two',
+    //   description: 'A brief description of the second project. This was a personal exploration into data visualization and API integration.',
+    //   tech: ['JavaScript (ES6+)', 'D3.js', 'CSS Grid'],
+    //   link: '#'
+    // }
   ];
 
   return (

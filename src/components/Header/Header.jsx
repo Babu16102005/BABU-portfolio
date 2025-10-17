@@ -9,7 +9,7 @@ const Header = () => {
       <nav className="nav">
         {/* Logo */}
         <div className="logo">
-          <a href="#home">MyPortfolio</a>
+          <a href="#home">Portfolio...</a>
         </div>
 
         {/* Hamburger Icon */}

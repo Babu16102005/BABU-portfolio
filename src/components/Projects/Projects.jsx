@@ -4,14 +4,22 @@ import './Projects.css';
 const Projects = () => {
   const projectData = [
     {
-      title: 'Career Guidance System',
+      title: 'Smart Mentis',
       description:
         'A comprehensive AI-driven career guidance system designed to help individuals make informed career decisions by holistically assessing their aptitude, interests, skills, and potential career trajectories.',
       tech: ['React js', 'Fast API', 'Firebase'],
       link: '#',
       domain:"Smart Education"
     },
-    // You can add more projects here
+    {
+      title: 'Zomato Delivery Analytics',
+      description:
+        'We analyze Zomato delivery data to optimize delivery routes and improve customer satisfaction.',
+      tech: ['Metabase','pandas'],
+      link: '#',
+      domain:"Data Analytics"
+    }
+    
   ];
 
   const projectsRef = useRef(null);

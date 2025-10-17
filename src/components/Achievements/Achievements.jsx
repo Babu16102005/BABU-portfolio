@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Achievements.css';
+import { FaTrophy } from "react-icons/fa";
+
 
 const Credentials = () => {
   const credentialData = [
     {
       type: 'Achievement',
-      title: 'We won the First prize🏆 in the Vision X (Paper Presentation) in DOTZ.V12 in the UCET.',
-      source: 'UCET',
+      title: <>We won the 1st prize <FaTrophy /> x2 in the Paper Presentation.</>,
+      source: 'presentation',
     },
     {
       type: 'Certification',
@@ -17,6 +19,11 @@ const Credentials = () => {
       type: 'Project',
       title: 'Career Guidance System',
       source: 'Team work project',
+    },
+    {
+      type: 'Certification',
+      title: 'Python Programming ',
+      source: 'Ethnotech',
     }
    
   ];

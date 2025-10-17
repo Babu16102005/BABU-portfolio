@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Skills.css';
-import { DiJava, DiReact, DiMongodb, DiHtml5, DiCss3 } from 'react-icons/di';
+import { DiJava, DiReact, DiMongodb } from 'react-icons/di';
 import { FaBolt, FaLightbulb, FaGithub } from 'react-icons/fa';
-import { SiSpringboot,SiPostman } from 'react-icons/si';
+import { SiSpringboot, SiPostman, SiMetabase,SiDocker} from 'react-icons/si';
 
 const Skills = () => {
   const skillsRef = useRef(null);
@@ -40,8 +40,10 @@ const Skills = () => {
         <li><span className="icon"><DiReact /></span> React JS</li>
         <li><span className="icon"><SiSpringboot /></span> Spring Boot</li>
         <li><span className="icon"><FaGithub /></span> Git & GitHub</li>
-        <li><span className="icon"><SiPostman  /></span> Postman</li>
+        <li><span className="icon"><SiPostman /></span> Postman</li>
         <li><span className="icon"><DiMongodb /></span> MongoDB</li>
+        <li><span className="icon"><SiMetabase /></span> Metabase</li>
+        <li><span className="icon"><SiDocker /></span> Docker</li>
         <li><span className="icon"><FaLightbulb /></span> Problem Solving</li>
         <li><span className="icon"><FaBolt /></span> Fast Learner</li>
       </ul>

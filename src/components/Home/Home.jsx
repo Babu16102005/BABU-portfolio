@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
+import { FaDownload } from "react-icons/fa";
+
 
 const Home = () => {
   const [visible, setVisible] = useState(false);
@@ -31,9 +33,22 @@ const Home = () => {
             Building interactive web apps with modern technologies. Focused on Problem Solving,
             Clean Code, Smart Design, and seamless user experience.
           </p>
-          {/* <a href="#contact" className="cta-button">Get In Touch</a> */}
+          <div className="button-container">
+            <a className="scroll-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
+              <span>Get In Touch</span>
+            </a>
+            <button className="download-btn">
+              <a
+                className="download-link"
+                href=""
+                download="Babu_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+                Download CV <FaDownload />
+            </button>
+          </div>
         </div>
-
       </div>
     </section>
   );

@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Skills.css';
 import { DiJava, DiReact, DiMongodb } from 'react-icons/di';
-import { FaBolt, FaLightbulb, FaGithub } from 'react-icons/fa';
+import { FaBolt, FaLightbulb, FaGithub  } from 'react-icons/fa';
 import { SiSpringboot, SiPostman, SiMetabase,SiDocker} from 'react-icons/si';
+import { MdOutlineRecordVoiceOver } from "react-icons/md";
 
 const Skills = () => {
   const skillsRef = useRef(null);
@@ -32,7 +33,7 @@ const Skills = () => {
       ref={skillsRef}
       className={`skills-section ${isVisible ? 'visible' : ''}`}
     >
-      <h2 className="section-title">My Industrial Skills</h2>
+      <h2 className="section-title">My Skills</h2>
       <p>In Technical and Industry point of view what I have learned,</p>
 
       <ul className="skills-list">
@@ -44,8 +45,10 @@ const Skills = () => {
         <li><span className="icon"><DiMongodb /></span> MongoDB</li>
         <li><span className="icon"><SiMetabase /></span> Metabase</li>
         <li><span className="icon"><SiDocker /></span> Docker</li>
+        {/* <li><span className="icon"><SiMicrosoft /></span> MS Office</li> */}
         <li><span className="icon"><FaLightbulb /></span> Problem Solving</li>
         <li><span className="icon"><FaBolt /></span> Fast Learner</li>
+        <li><span className="icon"><MdOutlineRecordVoiceOver  /></span> Good in communication</li>
       </ul>
     </section>
   );

@@ -37,7 +37,7 @@ const Home = () => {
             <a className="scroll-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
               <span>Get In Touch</span>
             </a>
-            <button className="download-btn">
+            {/* <button className="download-btn">
               <a
                 className="download-link"
                 href=""
@@ -46,7 +46,7 @@ const Home = () => {
                 rel="noopener noreferrer"
               />
                 Download CV <FaDownload />
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

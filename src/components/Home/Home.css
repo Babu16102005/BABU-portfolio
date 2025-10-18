@@ -228,7 +228,7 @@
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 868px) {
 
   .home-content {
     flex-direction: column;
@@ -244,14 +244,19 @@
 
   .text-content {
     min-width: 400px;
-
-    width: 80%;
+    width: 100%;
   }
-
+  .subtitle{
+    max-width: 619px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
   .intro-text {
     text-align: center;
-    /* padding-right: 10px; */
-    margin: 25px auto;
+    margin: 20px auto;
+    font-size: 15px;
+    max-width: 336px;
   }
 
   .cta-button {
@@ -261,6 +266,7 @@
 
 @media (max-width: 480px) {
   .name {
+    
     font-size: clamp(30px, 8vw, 50px);
   }
 

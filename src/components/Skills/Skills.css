@@ -90,6 +90,7 @@
 .skills-section.visible .skills-list li:nth-child(9) { transition-delay: 1.4s; }
 .skills-section.visible .skills-list li:nth-child(10) { transition-delay: 1.5s; }
 .skills-section.visible .skills-list li:nth-child(11) { transition-delay: 1.6s; }
+.skills-section.visible .skills-list li:nth-child(12) { transition-delay: 1.7s; }
 
 @media (max-width: 580px) { 
   .skills-list {

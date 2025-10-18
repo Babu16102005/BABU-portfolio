@@ -26,7 +26,7 @@ const Home = () => {
 
         {/* Right side - Text */}
         <div className="text-content">
-          <h1 className="greeting">Hi, my name is</h1>
+          <h1 className="greeting">Hi, I'm</h1>
           <h2 className="name">Babu B</h2>
           <h3 className="subtitle">Java Full Stack Developer</h3>
           <p className="intro-text">

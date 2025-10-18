@@ -94,9 +94,9 @@
 }
 
 .subtitle {
-  font-size: clamp(20px, 5vw, 50px);
+  font-size: clamp(20px, 5vw, 40px);
   color: var(--slate);
-  font-weight: 00;
+  font-weight: 600;
   margin: 0;
   line-height: 1;
   font-family: var(--font-mono);
@@ -228,7 +228,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
 
   .home-content {
     flex-direction: column;
@@ -245,12 +245,13 @@
   .text-content {
     min-width: 400px;
 
-    width: 100%;
+    width: 80%;
   }
 
   .intro-text {
     text-align: center;
-    margin: 20px auto;
+    /* padding-right: 10px; */
+    margin: 25px auto;
   }
 
   .cta-button {

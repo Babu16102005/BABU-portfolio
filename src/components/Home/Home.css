@@ -228,7 +228,7 @@
   }
 }
 
-@media (max-width: 868px) {
+@media (max-width: 1050px) {
 
   .home-content {
     flex-direction: column;
@@ -236,7 +236,10 @@
     text-align: center;
     margin-top: 100px;
   }
-
+  .name {
+    text-align: center;
+    font-size: clamp(35px, 7vw, 60px);
+  }
   .about-image {
     order: -1;
     margin-bottom: 1px;
@@ -246,17 +249,10 @@
     min-width: 400px;
     width: 100%;
   }
-  .subtitle{
-    max-width: 619px;
-    display: flex;
-    justify-content: center;
-    align-items: center
-  }
+
   .intro-text {
     text-align: center;
     margin: 20px auto;
-    font-size: 15px;
-    max-width: 336px;
   }
 
   .cta-button {
@@ -264,16 +260,19 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .name {
-    
-    font-size: clamp(30px, 8vw, 50px);
+
+    font-size: clamp(40px, 8vw, 50px);
   }
 
   .subtitle {
     font-size: clamp(24px, 7vw, 40px);
   }
-
+  .intro-text {
+    font-size: 14px;
+    max-width: 350px;
+  }
   .cta-button {
     width: 180px;
     padding: 1rem 1.5rem;

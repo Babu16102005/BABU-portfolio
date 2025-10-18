@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/BABU-portfolio/', // <-- important for GitHub Pages
+  base: '/', // <-- important for GitHub Pages
 });

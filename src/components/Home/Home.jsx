@@ -28,7 +28,7 @@ const Home = () => {
         <div className="text-content">
           <h1 className="greeting">Hi, I'm</h1>
           <h2 className="name">Babu B</h2>
-          <h3 className="subtitle">Java Full Stack Developer</h3>
+          <h3 className="subtitle">Full Stack Developer</h3>
           <p className="intro-text">
             Building interactive web apps with modern technologies. Focused on Problem Solving,
             Clean Code, Smart Design, and seamless user experience.

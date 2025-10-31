@@ -116,3 +116,25 @@
     padding: 12px 20px;
   }
 }
+
+/* ---------- Hover Line Effect from Center ---------- */
+.nav-item a {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item a:hover::after {
+  width: 100%;
+}

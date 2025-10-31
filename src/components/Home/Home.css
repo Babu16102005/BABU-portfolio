@@ -101,6 +101,27 @@
   line-height: 1;
   font-family: var(--font-mono);
 }
+/* ---------- Typing Animation for Subtitle ---------- */
+.subtitle {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: var(--slate);
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 
 .intro-text {
   max-width: 640px;

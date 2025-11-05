@@ -40,6 +40,6 @@
 /* Small device tweak: reduce icon gap */
 @media (max-width: 600px) {
   .social-links {
-    gap: 6px;
+    gap: 3px;
   }
 }

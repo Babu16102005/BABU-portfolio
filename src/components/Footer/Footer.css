@@ -7,41 +7,39 @@
   text-align: center;
 }
 
+/* Keep icons inline for all screens */
 .social-links {
   display: flex;
-  justify-content: space-between;
-  padding-right: 20px;
-
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Even spacing */
+  flex-wrap: wrap; /* Prevent overflow on small screens */
 }
 
 .social-links a {
   color: var(--slate);
-  padding: 10px;
   text-decoration: none;
   font-size: 1.2rem;
   font-family: var(--font-mono);
-  margin: 0 5px;
-  transition: color 0.3s;
+  padding: 8px;
+  transition: color 0.3s, transform 0.2s;
 }
 
 .social-links a:hover {
   color: var(--secondary-color);
+  transform: scale(1.1);
 }
 
 .copyright {
   color: var(--slate);
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  line-height: 1;
   margin-top: 1rem;
 }
 
-@media (max-width: 1768px) {
+/* Small device tweak: reduce icon gap */
+@media (max-width: 600px) {
   .social-links {
-    display: block; /* Show social links on mobile */
-    margin-bottom: 1rem;
-  }
-  .copyright {
-    margin-top: 0;
+    gap: 10px;
   }
 }

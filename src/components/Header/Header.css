@@ -72,7 +72,7 @@
 .menu-toggle span {
   background-color: var(--secondary-color);
   height: 3px;
-  width: 100%;
+  width: 90%;
   border-radius: 2px;
   transition: all 0.3s ease;
 }

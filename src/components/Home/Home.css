@@ -302,7 +302,30 @@
     padding: 1rem 1.5rem;
   }
 }
+/* //////////////// */
+@media (max-width: 480px) {
+  .home-section {
+    padding: 10px 10px;
+  }
 
+  .greeting {
+    font-size: clamp(12px, 4vw, 14px);
+  }
+
+  .name {
+    font-size: clamp(35px, 8vw, 45px);
+  }
+
+  .subtitle {
+    font-size: clamp(20px, 6vw, 30px);
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+/* /////////////////////////////////////// */
 /* ---------- Smooth Pop-up Animation ---------- */
 @keyframes popUpDown {
   0% {

@@ -72,10 +72,9 @@ const Home = () => {
             <a className="scroll-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
               <span>Get In Touch</span>
             </a>
-            {/* Uncomment to enable download button */}
-            {/* <button className="download-btn">
+            <a href="https://drive.google.com/uc?export=download&id=1pxL9Ys0toRbp15KSnoi1P8tZ33smfQRE" download="Babu_B_CV.pdf" className="download-btn" target="_blank" rel="noopener noreferrer">
               Download CV <FaDownload />
-            </button> */}
+            </a>
           </div>
         </div>
       </div>

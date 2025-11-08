@@ -37,7 +37,7 @@ const About = () => {
         <div className="about-text">
           <p className="para">
             I'm <span className="glow-text">Babu B</span>, currently focused on{' '}
-            <span className="glow-text">Java Full Stack Development</span>.
+            <span className="glow-text">Full Stack Development</span>.
             I have a strong passion for technology and problem-solving,
             always eager to tackle challenges and build meaningful solutions.
           </p>

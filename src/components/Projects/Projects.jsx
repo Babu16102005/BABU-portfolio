@@ -53,7 +53,6 @@ const Projects = () => {
       <div className="projects-grid">
         {projectData.map((project, index) => (
           <div key={index} className="project-card" style={{ ['--enter-delay']: `${0.3 + index * 0.2}s` }}>
-             <div className="zoom-area">
             <div className="project-inner">
               <header>
                 <div className="project-top">
@@ -82,7 +81,7 @@ const Projects = () => {
               </footer>
             </div>
           </div>
-          </div>
+          
         ))}
 
       </div>

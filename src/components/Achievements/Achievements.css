@@ -66,8 +66,8 @@
 
 /* ✨ Hover: fast, smooth, no delay */
 .credentials-section.visible .credential-card:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px -10px rgba(2, 12, 27, 0.9);
+  transform: translateY(-5px) scale(1.02) translateZ(0);
+  box-shadow: 0 3px 30px -10px var(--secondary-color);
   background-color: #0f1e39;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }

@@ -35,21 +35,44 @@
   margin-top: 40px;
 }
 
+/* ------------------------------- */
+/* CARD + FAST HOVER ZOOM FIXED    */
+/* ------------------------------- */
+
 .credential-card {
   background-color: #112240;
   padding: 1.5rem;
   border-radius: 4px;
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(30px) scale(1);
+
+  /* Separate transitions for entrance vs hover */
+  transition-property: opacity, transform, box-shadow;
+  transition-duration: 0.8s, 0.18s, 0.25s;
+  transition-timing-function: ease-out, cubic-bezier(.2, .9, .25, 1), ease;
+
+  /* Delay only for entrance (opacity) */
+  transition-delay: var(--enter-delay, 0s), 0s, 0s;
+
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .credentials-section.visible .credential-card {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
+/* ✨ Hover: fast, smooth, no delay */
+.credentials-section.visible .credential-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px -10px rgba(2, 12, 27, 0.9);
+  background-color: #0f1e39;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Text */
 .credential-type {
   font-family: var(--font-mono);
   font-size: 0.8rem;

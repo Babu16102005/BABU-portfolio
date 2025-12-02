@@ -4,6 +4,9 @@ import './Header.css';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Close menu after clicking a link
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className="header">
       <nav className="nav">
@@ -24,11 +27,11 @@ const Header = () => {
 
         {/* Navigation List */}
         <ul className={`nav-list ${menuOpen ? 'active' : ''}`}>
-          <li className="nav-item"><a href="#about">About</a></li>
-          <li className="nav-item"><a href="#skills">Skills</a></li>
-          <li className="nav-item"><a href="#projects">Projects</a></li>
-          <li className="nav-item"><a href="#credentials">Credentials</a></li>
-          <li className="nav-item"><a href="#contact">Contact</a></li>
+          <li className="nav-item"><a href="#about" onClick={closeMenu}>About</a></li>
+          <li className="nav-item"><a href="#skills" onClick={closeMenu}>Skills</a></li>
+          <li className="nav-item"><a href="#projects" onClick={closeMenu}>Projects</a></li>
+          <li className="nav-item"><a href="#credentials" onClick={closeMenu}>Credentials</a></li>
+          <li className="nav-item"><a href="#contact" onClick={closeMenu}>Contact</a></li>
         </ul>
       </nav>
     </header>

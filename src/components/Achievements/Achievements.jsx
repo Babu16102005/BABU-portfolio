@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Achievements.css';
 import { FaTrophy } from "react-icons/fa";
 
-
 const Credentials = () => {
   const credentialData = [
     {
@@ -22,10 +21,9 @@ const Credentials = () => {
     },
     {
       type: 'Certification',
-      title: 'Python Programming ',
+      title: 'Python Programming',
       source: 'Ethnotech',
     }
-   
   ];
 
   const sectionRef = useRef(null);
@@ -36,7 +34,7 @@ const Credentials = () => {
       (entries) => {
         if (entries[0].isIntersecting) {
           setVisible(true);
-          observer.disconnect(); // trigger once
+          observer.disconnect();
         }
       },
       { threshold: 0.3 }
@@ -58,7 +56,7 @@ const Credentials = () => {
           <div
             key={index}
             className="credential-card"
-            style={{ transitionDelay: `${0.3 + index * 0.2}s` }}
+            style={{ ['--enter-delay']: `${0.3 + index * 0.2}s` }}  // <-- updated
           >
             <div className="credential-type">{item.type}</div>
             <h3 className="credential-title">{item.title}</h3>

@@ -55,6 +55,14 @@
   margin-top: 30px;
   list-style: none;
 }
+.skills-list li .icon {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.skills-list li:hover .icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 4px var(--secondary-color));
+}
 
 .icon {
   font-size: 24px;

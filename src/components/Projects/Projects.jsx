@@ -9,17 +9,17 @@ const Projects = () => {
         'A comprehensive AI-driven career guidance system designed to help individuals make informed career decisions by holistically assessing their aptitude, interests, skills, and potential career trajectories.',
       tech: ['React js', 'Fast API', 'Firebase'],
       link: '#',
-      domain:"Smart Education"
+      domain: "Smart Education"
     },
     {
       title: 'Zomato Delivery Analytics',
       description:
         'We analyze Zomato delivery data to optimize delivery routes and improve customer satisfaction.',
-      tech: ['Metabase','pandas'],
+      tech: ['Metabase', 'pandas'],
       link: '#',
-      domain:"Data Analytics"
+      domain: "Data Analytics"
     }
-    
+
   ];
 
   const projectsRef = useRef(null);
@@ -52,7 +52,7 @@ const Projects = () => {
       <h2 className="section-title">Some Things I've Built</h2>
       <div className="projects-grid">
         {projectData.map((project, index) => (
-          <div key={index} className="project-card" style={{ transitionDelay: `${0.3 + index * 0.2}s` }}>
+          <div key={index} className="project-card" style={{ ['--enter-delay']: `${0.3 + index * 0.2}s` }}>
             <div className="project-inner">
               <header>
                 <div className="project-top">

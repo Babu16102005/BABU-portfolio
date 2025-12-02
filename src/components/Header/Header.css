@@ -45,6 +45,15 @@
   gap: 20px;
 }
 
+/* Make nav-list smooth when toggling on mobile */
+.nav-list {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* When opening on mobile we switch to column and animate in */
+
+
+/* Nav items */
 .nav-item a {
   color: var(--light-slate);
   text-decoration: none;
@@ -52,6 +61,8 @@
   font-size: 0.95rem;
   padding: 8px 12px;
   transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .nav-item a:hover {
@@ -67,6 +78,15 @@
   width: 25px;
   height: 18px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-toggle:focus {
+  outline: 2px solid rgba(100, 150, 255, 0.15);
+  outline-offset: 4px;
 }
 
 .menu-toggle span {
@@ -75,8 +95,10 @@
   width: 100%;
   border-radius: 2px;
   transition: all 0.3s ease;
+  display: block;
 }
 
+/* Active hamburger transforms into X */
 .menu-toggle.active span:nth-child(1) {
   transform: translateY(7.5px) rotate(45deg);
 }
@@ -105,10 +127,17 @@
     width: 100%;
     background-color: rgba(10, 25, 47, 0.98);
     padding: 20px 0;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
   }
 
+  /* When active, expose the mobile nav */
   .nav-list.active {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .nav-item a {
@@ -118,11 +147,6 @@
 }
 
 /* ---------- Hover Line Effect from Center ---------- */
-.nav-item a {
-  position: relative;
-  overflow: hidden;
-}
-
 .nav-item a::after {
   content: '';
   position: absolute;
@@ -137,4 +161,14 @@
 
 .nav-item a:hover::after {
   width: 100%;
+}
+
+/* Disable hover effects on touch devices to avoid odd behaviour */
+@media (hover: none) {
+  .nav-item a:hover {
+    transform: none;
+  }
+  .nav-item a:hover::after {
+    width: 0;
+  }
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Skills.css';
 import { DiJava, DiReact, DiMongodb } from 'react-icons/di';
 import { FaBolt, FaLightbulb, FaGithub  } from 'react-icons/fa';
-import { SiSpringboot, SiPostman, SiMetabase,SiDocker,SiPostgresql} from 'react-icons/si';
+import { SiHtml5 ,SiCss3 ,SiJavascript ,SiSpringboot, SiPostman, SiMetabase,SiDocker,SiPostgresql} from 'react-icons/si';
 import { MdOutlineRecordVoiceOver } from "react-icons/md";
 
 const Skills = () => {
@@ -37,6 +37,9 @@ const Skills = () => {
       <p>In Technical and Industry point of view what I have learned,</p>
 
       <ul className="skills-list">
+        <li><span className="icon"><SiHtml5 /></span> HTML</li>
+        <li><span className="icon"><SiCss3 /></span> CSS</li>
+        <li><span className="icon"><SiJavascript  /></span> JavaScript</li>
         <li><span className="icon"><DiJava /></span> Java</li>
         <li><span className="icon"><DiReact /></span> React JS</li>
         <li><span className="icon"><SiSpringboot /></span> Spring Boot</li>

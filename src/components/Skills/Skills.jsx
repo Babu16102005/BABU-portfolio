@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Skills.css';
 import { DiJava, DiReact, DiMongodb } from 'react-icons/di';
 import { FaBolt, FaLightbulb, FaGithub  } from 'react-icons/fa';
-import { SiHtml5 ,SiCss3 ,SiJavascript ,SiSpringboot, SiPostman, SiMetabase,SiDocker,SiPostgresql} from 'react-icons/si';
+import { SiHtml5 ,SiCss3 ,SiJavascript ,SiSpringboot, SiPostman, SiMetabase,SiDocker,SiPostgresql,SiAppwrite} from 'react-icons/si';
 import { MdOutlineRecordVoiceOver } from "react-icons/md";
 
 const Skills = () => {
@@ -45,9 +45,9 @@ const Skills = () => {
         <li><span className="icon"><SiSpringboot /></span> Spring Boot</li>
         <li><span className="icon"><FaGithub /></span> Git & GitHub</li>
         <li><span className="icon"><SiPostman /></span> Postman</li>
-        <li><span className="icon"><DiMongodb /></span> MongoDB</li>
         <li><span className="icon"><SiPostgresql /></span> PostgreSQL</li>
         <li><span className="icon"><SiMetabase /></span> Metabase</li>
+        <li><span className="icon"><SiAppwrite /></span> Appwrite</li>
         <li><span className="icon"><SiDocker /></span> Docker</li>
         <li><span className="icon"><FaLightbulb /></span> Problem Solving</li>
         <li><span className="icon"><FaBolt /></span> Fast Learner</li>

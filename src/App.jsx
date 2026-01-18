@@ -10,21 +10,24 @@ import Projects from './components/Projects/Projects';
 import Credentials from './components/Achievements/Achievements';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import VantaBackground from './components/VantaBackground/VantaBackground';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Home />
-        <About />
-        <Skills />
-        <Projects />
-        <Credentials />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <VantaBackground>
+      <div className="App">
+        <Header />
+        <main>
+          <Home />
+          <About />
+          <Skills />
+          <Projects />
+          <Credentials />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </VantaBackground>
   );
 }
 

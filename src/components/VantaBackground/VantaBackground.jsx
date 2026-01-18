@@ -48,9 +48,9 @@ const VantaBackground = ({ children }) => {
                         minWidth: 200.0,
                         scale: 1.0,
                         scaleMobile: 1.0,
-                        // Matching your portfolio color palette #0a192f (subtle net)
+                        // Matching your portfolio color palette #0a192f (very subtle net)
                         backgroundColor: 0x0a192f,
-                        color: 0x2a7a66,        // Subtle teal - less bright
+                        color: 0x1a4a40,        // Very subtle teal - faint
                         points: 10.0,
                         maxDistance: 20.0,
                         spacing: 15.0,

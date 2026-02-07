@@ -42,16 +42,16 @@ const About = () => {
             always eager to tackle challenges and build meaningful solutions.
           </p>
 
-          <p>
+          <p className="para">
             As a <span className="glow-text">fast learner</span> and enthusiastic developer, I continuously expand my
             skills across front-end and back-end technologies, including{' '}
-            <span className="glow-text">Java</span>,{' '}
-            <span className="glow-text">React</span>,{' '}
-            <span className="glow-text">Spring Boot</span>, and{' '}
-            <span className="glow-text">MongoDB</span>. I thrive in collaborative environments and enjoy creating projects that combine creativity with technical expertise.
+            <span className="glow-text">Java</span> ,{' '}
+            <span className="glow-text">React</span> ,{' '}
+            <span className="glow-text">Spring Boot</span> and{' '}
+            <span className="glow-text">PostgreSQL</span> . I thrive in collaborative environments and enjoy creating projects that combine creativity with technical expertise.
           </p>
 
-          <p>
+          <p className="para">
             Beyond coding, I am committed to improving my skills, exploring new technologies, and contributing to impactful projects that make a difference.
           </p>
         </div>

@@ -48,12 +48,12 @@ const VantaBackground = ({ children }) => {
                         minWidth: 200.0,
                         scale: 1.0,
                         scaleMobile: 1.0,
-                        // Matching your portfolio color palette #0a192f (very subtle net)
-                        backgroundColor: 0x0a192f,
-                        color: 0x1a4a40,        // Very subtle teal - faint
-                        points: 10.0,
-                        maxDistance: 20.0,
-                        spacing: 15.0,
+                        // Cyberpunk color palette - rgba(0, 240, 255, 0.5) effect
+                        backgroundColor: 0x0a0a0f, // Dark cyber background
+                        color: 0x057d87,           // Cyan at ~50% opacity blended with bg (simulates rgba(0,240,255,0.5))
+                        points: 8.0,               // Fewer points for cleaner look
+                        maxDistance: 25.0,         // Longer connections
+                        spacing: 18.0,             // More spacing
                         showDots: true,
                     })
                 );

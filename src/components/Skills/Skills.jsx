@@ -34,7 +34,7 @@ const Skills = () => {
       className={`skills-section ${isVisible ? 'visible' : ''}`}
     >
       <h2 className="section-title">My Skills</h2>
-      <p>In Technical and Industry point of view what I have learned,</p>
+      <p className="para">In Technical and Industry point of view what I have learned,</p>
 
       <ul className="skills-list">
         <li><span className="icon"><SiHtml5 /></span> HTML</li>

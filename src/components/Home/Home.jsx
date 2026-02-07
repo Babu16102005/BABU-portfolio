@@ -59,7 +59,7 @@ const Home = () => {
         {/* Right side - Text */}
         <div className="text-content">
           <h1 className="greeting">Hi, I'm</h1>
-          <h2 className="name">Babu B</h2>
+          <h2 className="name" data-text="Babu B"> Babu B`</h2>
           <h3 className="subtitle">
             {text}
             <span className="cursor">|</span>

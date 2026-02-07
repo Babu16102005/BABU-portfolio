@@ -70,7 +70,7 @@ const Projects = () => {
                 <div className="project-description">
                   <p>{project.description}</p>
                 </div>
-                <p className="project-domain"><strong>Domain:</strong> {project.domain}</p>
+                <p className="project-domain"><strong>Domain:</strong>{project.domain}</p>
               </header>
               <footer>
                 <ul className="project-tech-list">

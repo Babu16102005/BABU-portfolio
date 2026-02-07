@@ -1,7 +1,11 @@
+/* ============================================
+   CYBER VANTA BACKGROUND
+   ============================================ */
+
 .vanta-wrapper {
     position: relative;
-    width: 100%;
     min-height: 100vh;
+    width: 100%;
 }
 
 .vanta-background {
@@ -10,10 +14,44 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
 }
 
 .vanta-content {
     position: relative;
     z-index: 1;
+}
+
+/* Additional atmospheric effects */
+.vanta-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(0, 240, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(255, 0, 255, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Scanline effect for extra cyberpunk feel */
+.vanta-wrapper::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.03),
+            rgba(0, 0, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
 }

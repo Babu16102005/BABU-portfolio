@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Close menu after clicking a link
   const closeMenu = () => setMenuOpen(false);
 
+  // Handle scroll for header background
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <nav className="nav">
         {/* Logo */}
         <div className="logo">
-          <a href="#home">Portfolio...</a>
+          <a href="#home">Babu</a>
         </div>
 
         {/* Hamburger Icon */}

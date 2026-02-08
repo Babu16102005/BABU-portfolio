@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import GlobalBackground from './components/GlobalBackground/GlobalBackground';
 
 // Import Components
 import Header from './components/Header/Header';
@@ -10,24 +11,28 @@ import Projects from './components/Projects/Projects';
 import Credentials from './components/Achievements/Achievements';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+
 import VantaBackground from './components/VantaBackground/VantaBackground';
 
 function App() {
   return (
-    <VantaBackground>
-      <div className="App">
-        <Header />
-        <main>
-          <Home />
-          <About />
-          <Skills />
-          <Projects />
-          <Credentials />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </VantaBackground>
+    <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
+      <VantaBackground>
+        <GlobalBackground />
+        <div className="App">
+          <Header />
+          <main>
+            <Home />
+            <About />
+            <Skills />
+            <Projects />
+            <Credentials />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </VantaBackground>
+    </div>
   );
 }
 

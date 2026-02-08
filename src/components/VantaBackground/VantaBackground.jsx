@@ -50,6 +50,7 @@ const VantaBackground = ({ children }) => {
                         scaleMobile: 1.0,
                         // Cyberpunk color palette - rgba(0, 240, 255, 0.5) effect
                         backgroundColor: 0x0a0a0f, // Dark cyber background
+                        // backgroundAlpha: 1.0,   // Restore opacity
                         color: 0x057d87,           // Cyan at ~50% opacity blended with bg (simulates rgba(0,240,255,0.5))
                         points: 8.0,               // Fewer points for cleaner look
                         maxDistance: 25.0,         // Longer connections

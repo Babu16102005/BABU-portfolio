@@ -1,0 +1,37 @@
+.text-fill-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(2rem, 8vh, 4rem) 1.5rem;
+}
+
+.fill-text {
+  margin: 0;
+  font-size: clamp(1.2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+  font-family: inherit;
+  text-align: center;
+}
+
+
+.fill-text > span {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-color: #3f434a; /* Muted color */
+  background-image: linear-gradient(135deg, #ffffff 50%, #3f434a 60%);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 0% 200%;
+  color: transparent;
+  display: inline;
+  will-change: background-size;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill-text > span {
+    background-size: 200% 200%;
+  }
+}

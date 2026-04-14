@@ -1,278 +1,201 @@
-/* ============================================
-   CYBER CONTACT - Neon CTA Section
-   ============================================ */
+.contact-body {
+  margin-top: clamp(2rem, 8vh, 4rem);
+  width: 100%;
+}
 
-.contact-section {
-  max-width: 700px;
-  margin: 0 auto 80px;
-  padding: 120px 20px;
+.brutal-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
-
-.contact-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Section Title */
-.contact-section .section-title {
-  font-family: var(--font-mono);
-  font-size: clamp(16px, 2vw, 18px);
-  font-weight: 500;
-  color: var(--neon-cyan);
-  background: none;
-  -webkit-text-fill-color: initial;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.8s ease-out;
-}
-
-.contact-section .section-title::after {
-  display: none;
-}
-
-.contact-section.visible .section-title {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.2s;
-}
-
-/* Contact Subtitle */
-.contact-subtitle {
-  font-family: 'Supercharge', sans-serif;
-  font-size: clamp(40px, 6vw, 64px);
-  font-weight: 800;
-  background: var(--gradient-neon);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0 0 30px;
-  line-height: 1.1;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.8s ease-out;
-}
-
-.contact-section.visible .contact-subtitle {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.3s;
-}
-
-/* Contact Description */
-.contact-section p {
-  font-family: 'quicking', sans-serif;
-  font-size: clamp(16px, 2vw, 18px);
-  color: var(--text-secondary);
-  line-height: 1.8;
-  max-width: 500px;
-  margin: 0 auto 50px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
-}
-
-.contact-section.visible p {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.4s;
-}
-
-/* CTA Button */
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 48px;
-  font-family: var(--font-mono);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--bg-primary);
-  background: var(--gradient-neon);
-  border: none;
-  border-radius: 12px;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.3);
-  animation: ctaGlitch 4s infinite;
-}
-
-/* Glitch layer */
-.cta-button::after {
-  content: 'Say Hello';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  gap: 2rem;
   width: 100%;
-  height: 100%;
+}
+
+.form-group {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gradient-neon);
-  border-radius: 12px;
-  opacity: 0;
-  pointer-events: none;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
 }
 
-/* Shine effect */
-.cta-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s ease;
+.form-group label {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--hero-accent, #ccff00);
 }
 
-.contact-section.visible .cta-button {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.5s;
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.2rem;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  resize: vertical; /* Only allow vertical resizing */
 }
 
-.cta-button:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 40px rgba(0, 240, 255, 0.5), 0 0 60px rgba(0, 240, 255, 0.3);
-  animation: ctaGlitchHover 0.5s ease;
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--hero-accent, #ccff00);
+  background: rgba(204, 255, 0, 0.08);
+  box-shadow: 0 0 20px rgba(204, 255, 0, 0.15);
 }
 
-.cta-button:hover::before {
-  left: 100%;
+
+.contact-content-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-@keyframes ctaGlitch {
-
-  0%,
-  90%,
-  100% {
-    transform: translateY(0) translateX(0) scale(1);
-    filter: none;
-    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.3);
-  }
-
-  91% {
-    transform: translateY(0) translateX(-5px) scale(1.01);
-    filter: hue-rotate(30deg) brightness(1.1);
-    box-shadow:
-      5px 0 0 rgba(255, 0, 255, 0.5),
-      -5px 0 0 rgba(0, 255, 255, 0.5),
-      0 4px 30px rgba(0, 240, 255, 0.5);
-  }
-
-  92% {
-    transform: translateY(-2px) translateX(5px) scale(0.99);
-    filter: hue-rotate(-20deg);
-    box-shadow:
-      -3px 0 0 rgba(255, 0, 255, 0.4),
-      3px 0 0 rgba(0, 255, 255, 0.4),
-      0 4px 25px rgba(0, 240, 255, 0.4);
-  }
-
-  93% {
-    transform: translateY(2px) translateX(-3px) skewX(-2deg) scale(1.02);
-    filter: hue-rotate(15deg) brightness(1.05);
-  }
-
-  94% {
-    transform: translateY(-1px) translateX(3px) skewX(2deg) scale(0.98);
-    filter: hue-rotate(-10deg);
-  }
-
-  95% {
-    transform: translateY(1px) translateX(-2px) scale(1);
-    filter: hue-rotate(5deg);
-    box-shadow:
-      2px 0 0 rgba(255, 0, 255, 0.3),
-      -2px 0 0 rgba(0, 255, 255, 0.3),
-      0 4px 20px rgba(0, 240, 255, 0.3);
-  }
-
-  96% {
-    transform: translateY(0) translateX(0) scale(1);
-    filter: none;
-  }
+.brutal-header-centered {
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
-@keyframes ctaGlitchHover {
-
-  0%,
-  100% {
-    transform: translateY(-4px) scale(1.02) translateX(0);
-    filter: none;
-  }
-
-  10% {
-    transform: translateY(-4px) scale(1.02) translateX(-6px) skewX(-3deg);
-    filter: hue-rotate(40deg) brightness(1.2);
-    box-shadow:
-      6px 0 0 rgba(255, 0, 255, 0.7),
-      -6px 0 0 rgba(0, 255, 255, 0.7),
-      0 8px 50px rgba(0, 240, 255, 0.6);
-  }
-
-  20% {
-    transform: translateY(-6px) scale(1.03) translateX(6px) skewX(3deg);
-    filter: hue-rotate(-30deg);
-  }
-
-  30% {
-    transform: translateY(-2px) scale(0.98) translateX(-4px) skewX(-2deg);
-    filter: hue-rotate(25deg) brightness(1.1);
-  }
-
-  40% {
-    transform: translateY(-5px) scale(1.04) translateX(4px) skewX(2deg);
-    filter: hue-rotate(-20deg);
-    box-shadow:
-      4px 0 0 rgba(255, 0, 255, 0.5),
-      -4px 0 0 rgba(0, 255, 255, 0.5),
-      0 8px 45px rgba(0, 240, 255, 0.5);
-  }
-
-  50% {
-    transform: translateY(-3px) scale(1.01) translateX(-2px);
-    filter: hue-rotate(15deg);
-  }
-
-  60% {
-    transform: translateY(-4px) scale(1.02) translateX(2px);
-    filter: hue-rotate(-10deg) brightness(1.05);
-  }
-
-  70% {
-    transform: translateY(-4px) scale(1.02) translateX(-1px);
-    filter: hue-rotate(5deg);
-  }
-
-  80% {
-    transform: translateY(-4px) scale(1.02) translateX(1px);
-    filter: none;
-    box-shadow: 0 8px 40px rgba(0, 240, 255, 0.5), 0 0 60px rgba(0, 240, 255, 0.3);
-  }
+.contact-sub-text {
+    font-family: inherit;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 2rem auto 0;
+    line-height: 1.6;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .cta-button {
-    padding: 16px 40px;
-    font-size: 14px;
-  }
+
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    padding: clamp(1.5rem, 5vw, 4rem);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
 }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.mega-brutal-btn {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    color: #000;
+    padding: 1.2rem;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.mega-brutal-btn:hover {
+    background: var(--hero-accent, #ccff00);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(204, 255, 0, 0.2);
+}
+
+/* Loading HUD overlay */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.loader-hud {
+    text-align: center;
+    position: relative;
+    width: 80%;
+    height: 100px;
+    border: 1px solid rgba(204, 255, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--hero-accent, #ccff00);
+    box-shadow: 0 0 15px var(--hero-accent, #ccff00);
+    animation: scanMove 1.5s infinite linear;
+}
+
+@keyframes scanMove {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+.loader-text {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    color: var(--hero-accent, #ccff00);
+    margin-bottom: 0.5rem;
+}
+
+.loader-percent {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Success Card */
+.success-card {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: rgba(204, 255, 0, 0.05);
+    border: 1px solid var(--hero-accent, #ccff00);
+}
+
+.success-icon {
+    font-size: 3rem;
+    color: var(--hero-accent, #ccff00);
+    margin-bottom: 1.5rem;
+}
+
+.success-card h3 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+}
+
+
+

@@ -1,0 +1,443 @@
+.webgl-scroll-sync {
+  --dark-bg: #0a0a0f;
+  --dark-fg: #e8e4d9;
+  --dark-muted: #6a6a7e;
+  --dark-accent: #c8ff47;
+  --dark-card-bg: rgba(10, 10, 15, 0.16);
+  --dark-card-border: rgba(200, 255, 71, 0.18);
+  --light-bg: #eef4ff;
+  --light-fg: #0b141a;
+  --light-muted: #6c8296;
+  --light-accent: #1b7ed6;
+  --light-card-bg: rgba(245, 249, 255, 0.82);
+  --light-card-border: rgba(27, 126, 214, 0.22);
+  --bg: var(--dark-bg);
+  --fg: var(--dark-fg);
+  --muted: var(--dark-muted);
+  --accent: var(--dark-accent);
+  --card-bg: var(--dark-card-bg);
+  --card-border: var(--dark-card-border);
+  --webgl-font-display: 'Bebas Neue', var(--font-display), sans-serif;
+  --webgl-font-mono: 'DM Mono', var(--font-mono), monospace;
+  --hairline: 0.0625rem;
+  --ui-inset: 2rem;
+  --nav-x: calc(var(--ui-inset) + 0.125rem);
+  --reveal-offset: 0.625rem;
+  --reveal-duration: 0.5s;
+  --card-radius: 0.875rem;
+  --z-ui: 10;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--webgl-font-mono);
+  transition: background 0.3s ease, color 0.3s ease;
+  isolation: isolate;
+}
+
+.webgl-scroll-sync[data-theme='light'] {
+  --bg: var(--light-bg);
+  --fg: var(--light-fg);
+  --muted: var(--light-muted);
+  --accent: var(--light-accent);
+  --card-bg: var(--light-card-bg);
+  --card-border: var(--light-card-border);
+}
+
+.webgl-scroll-sync .webgl-canvas {
+  position: sticky;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.webgl-scroll-sync .hud {
+  position: sticky;
+  top: var(--ui-inset);
+  margin-top: calc(-100vh + var(--ui-inset));
+  margin-right: var(--ui-inset);
+  margin-left: auto;
+  width: max-content;
+  z-index: var(--z-ui);
+  text-align: right;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.webgl-scroll-sync .progress-bar {
+  width: 7.5rem;
+  height: var(--hairline);
+  background: var(--muted);
+  margin-block-start: 0.5rem;
+  margin-inline-start: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.webgl-scroll-sync .progress-fill {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.webgl-scroll-sync .scene-label {
+  font-size: 0.6rem;
+  color: var(--accent);
+  margin-block-start: 0.4rem;
+}
+
+.webgl-scroll-sync .scene-strip {
+  position: sticky;
+  left: var(--nav-x);
+  top: 50%;
+  translate: -50% -50%;
+  z-index: var(--z-ui);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: fit-content;
+  pointer-events: none;
+}
+
+.webgl-scroll-sync .scene-dot {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: background 0.3s, scale 0.3s;
+}
+
+.webgl-scroll-sync .scene-dot.active {
+  background: var(--accent);
+  scale: 1.8;
+}
+
+.webgl-scroll-sync .theme-toggle {
+  position: sticky;
+  bottom: var(--ui-inset);
+  left: var(--nav-x);
+  translate: -50% 0;
+  z-index: var(--z-ui);
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: color-mix(in srgb, var(--muted) 35%, transparent);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.webgl-scroll-sync .theme-toggle:hover {
+  background: color-mix(in srgb, var(--muted) 55%, transparent);
+}
+
+.webgl-scroll-sync .theme-toggle svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  position: absolute;
+  transition: opacity 0.3s ease, rotate 0.3s ease;
+  color: var(--accent);
+}
+
+.webgl-scroll-sync[data-theme='light'] .theme-toggle svg {
+  color: var(--fg);
+}
+
+.webgl-scroll-sync .icon-sun {
+  opacity: 1;
+  rotate: 0deg;
+}
+
+.webgl-scroll-sync .icon-moon {
+  opacity: 0;
+  rotate: 90deg;
+}
+
+.webgl-scroll-sync[data-theme='light'] .icon-sun {
+  opacity: 0;
+  rotate: -90deg;
+}
+
+.webgl-scroll-sync[data-theme='light'] .icon-moon {
+  opacity: 1;
+  rotate: 0deg;
+}
+
+.webgl-scroll-sync .scroll-container {
+  position: relative;
+  z-index: 1;
+  margin-top: calc(-2rem - 2rem);
+}
+
+.webgl-scroll-sync .project-scene {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 5rem;
+}
+
+.webgl-scroll-sync .text-card {
+  max-width: 26rem;
+  padding: 2.25rem 2rem;
+  background: var(--card-bg);
+  border-left: var(--hairline) solid var(--card-border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.webgl-scroll-sync[data-theme='dark'] .text-card,
+.webgl-scroll-sync .text-card {
+  border: var(--hairline) solid var(--card-border);
+  border-radius: var(--card-radius);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.webgl-scroll-sync .text-card.right {
+  margin-inline-start: auto;
+  border-left: none;
+  border-right: var(--hairline) solid var(--card-border);
+  text-align: right;
+}
+
+.webgl-scroll-sync .text-card.center {
+  margin-inline: auto;
+  border-left: none;
+  border-top: var(--hairline) solid var(--card-border);
+  text-align: center;
+  max-width: 30rem;
+}
+
+.webgl-scroll-sync .tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-block-end: 1.1rem;
+  opacity: 0;
+  translate: 0 var(--reveal-offset);
+  transition: opacity var(--reveal-duration) ease, translate var(--reveal-duration) ease;
+}
+
+.webgl-scroll-sync .tag.visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.webgl-scroll-sync h1,
+.webgl-scroll-sync h2 {
+  margin: 0;
+  font-family: var(--webgl-font-display);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 0.92;
+  opacity: 0;
+  translate: 0 1.125rem;
+  transition: opacity var(--reveal-duration) ease 0.08s, translate var(--reveal-duration) ease 0.08s;
+}
+
+.webgl-scroll-sync h1.visible,
+.webgl-scroll-sync h2.visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.webgl-scroll-sync h1 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+}
+
+.webgl-scroll-sync h2 {
+  font-size: clamp(2.2rem, 6vw, 5rem);
+}
+
+.webgl-scroll-sync .body-text {
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--fg) 55%, transparent);
+  margin-block-start: 1.25rem;
+  opacity: 0;
+  translate: 0 var(--reveal-offset);
+  transition: opacity var(--reveal-duration) ease 0.2s, translate var(--reveal-duration) ease 0.2s;
+}
+
+.webgl-scroll-sync .body-text.visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.webgl-scroll-sync .scene-meta {
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.webgl-scroll-sync .stat-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-block-start: 2rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  translate: 0 var(--reveal-offset);
+  transition: opacity var(--reveal-duration) ease 0.3s, translate var(--reveal-duration) ease 0.3s;
+}
+
+.webgl-scroll-sync .stat-row.visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.webgl-scroll-sync .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.webgl-scroll-sync .stat-num {
+  font-family: var(--webgl-font-display);
+  font-size: 2.2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.webgl-scroll-sync .stat-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.webgl-scroll-sync .h-line {
+  width: 3.125rem;
+  height: var(--hairline);
+  background: var(--accent);
+  margin-block-end: 1.2rem;
+  opacity: 0;
+  scale: 0 1;
+  transform-origin: left;
+  transition: opacity 0.4s ease, scale 0.4s ease;
+}
+
+.webgl-scroll-sync .h-line.visible {
+  opacity: 1;
+  scale: 1 1;
+}
+
+.webgl-scroll-sync .text-card.right .h-line {
+  transform-origin: right;
+  margin-inline-start: auto;
+}
+
+.webgl-scroll-sync .text-card.center .h-line {
+  transform-origin: center;
+  margin-inline: auto;
+  margin-block-end: 1.2rem;
+}
+
+.webgl-scroll-sync .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-block-start: 1.75rem;
+  padding: 0.6rem 1.25rem;
+  border: var(--hairline) solid var(--accent);
+  color: var(--accent);
+  font-family: var(--webgl-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  translate: 0 var(--reveal-offset);
+  transition: opacity var(--reveal-duration) ease 0.35s, translate var(--reveal-duration) ease 0.35s, background 0.2s, color 0.2s;
+}
+
+.webgl-scroll-sync .cta.visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.webgl-scroll-sync .cta:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.webgl-scroll-sync .cta svg {
+  width: 0.6875rem;
+  height: 0.6875rem;
+}
+
+@media (max-width: 60em) {
+  .webgl-scroll-sync .project-scene {
+    padding: 5rem 3rem;
+  }
+
+  .webgl-scroll-sync .text-card {
+    max-width: 22rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .webgl-scroll-sync {
+    --ui-inset: 1.25rem;
+  }
+
+  .webgl-scroll-sync .project-scene {
+    padding: 4rem 1.25rem;
+  }
+
+  .webgl-scroll-sync .text-card {
+    max-width: 100%;
+  }
+
+  .webgl-scroll-sync .text-card.right,
+  .webgl-scroll-sync .text-card.center {
+    margin-inline: 0;
+    text-align: left;
+    border-right: none;
+    border-top: none;
+    border-left: var(--hairline) solid var(--card-border);
+  }
+
+  .webgl-scroll-sync .text-card.right .h-line,
+  .webgl-scroll-sync .text-card.center .h-line {
+    transform-origin: left;
+    margin-inline-start: 0;
+    margin-inline: 0;
+  }
+
+  .webgl-scroll-sync .hud {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .webgl-scroll-sync .scene-strip {
+    display: none;
+  }
+
+  .webgl-scroll-sync .theme-toggle {
+    bottom: 1rem;
+    left: 1.25rem;
+    translate: 0 0;
+  }
+
+  .webgl-scroll-sync .stat-row {
+    gap: 1.5rem;
+  }
+}

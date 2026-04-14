@@ -1,0 +1,71 @@
+.fluid-reveal-frame {
+  position: relative;
+  width: min(400px, 90vw);
+  height: min(400px, 90vw);
+  max-width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: none;
+  background: #000;
+  border: 4px solid var(--hero-accent, #ccff00);
+  box-shadow: 10px 10px 0 #000, 14px 14px 0 var(--hero-accent, #ccff00);
+}
+
+
+.image-under,
+.image-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-under img,
+.image-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.image-under img {
+  filter: contrast(1.05);
+  transition: all 0.5s ease;
+}
+
+.image-top {
+  z-index: 2;
+  -webkit-mask-image: var(--mask-image);
+  mask-image: var(--mask-image);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 280px 280px;
+  mask-size: 280px 280px;
+  -webkit-mask-position: var(--mask-x) var(--mask-y);
+  mask-position: var(--mask-x) var(--mask-y);
+}
+
+.fluid-blob {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--hero-accent, #ccff00);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fluid-blob.active {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .fluid-reveal-frame {
+    width: 320px;
+    height: 320px;
+  }
+}

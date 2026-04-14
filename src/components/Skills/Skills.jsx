@@ -1,58 +1,54 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import './Skills.css';
-import { DiJava, DiReact, DiMongodb } from 'react-icons/di';
-import { FaBolt, FaLightbulb, FaGithub  } from 'react-icons/fa';
-import { SiHtml5 ,SiCss3 ,SiJavascript ,SiSpringboot, SiPostman, SiMetabase,SiDocker,SiPostgresql,SiAppwrite} from 'react-icons/si';
-import { MdOutlineRecordVoiceOver } from "react-icons/md";
+import { DiJava, DiReact } from 'react-icons/di';
+import { FaBolt, FaLightbulb, FaGithub } from 'react-icons/fa';
+import {
+  SiHtml5, SiCss3, SiJavascript, SiSpringboot, SiPostman, SiMetabase,
+  SiDocker, SiPostgresql, SiAppwrite,
+} from 'react-icons/si';
+import { MdOutlineRecordVoiceOver } from 'react-icons/md';
+
+const skillItems = [
+  { icon: <SiHtml5 />, label: 'HTML' },
+  { icon: <SiCss3 />, label: 'CSS' },
+  { icon: <SiJavascript />, label: 'JavaScript' },
+  { icon: <DiJava />, label: 'Java' },
+  { icon: <DiReact />, label: 'React JS' },
+  { icon: <SiSpringboot />, label: 'Spring Boot' },
+  { icon: <FaGithub />, label: 'Git & GitHub' },
+  { icon: <SiPostman />, label: 'Postman' },
+  { icon: <SiPostgresql />, label: 'PostgreSQL' },
+  { icon: <SiMetabase />, label: 'Metabase' },
+  { icon: <SiAppwrite />, label: 'Appwrite' },
+  { icon: <SiDocker />, label: 'Docker' },
+];
+
 
 const Skills = () => {
-  const skillsRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect(); // run once
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      id="skills"
-      ref={skillsRef}
-      className={`skills-section ${isVisible ? 'visible' : ''}`}
-    >
-      <h2 className="section-title">My Skills</h2>
-      <p className="para">In Technical and Industry point of view what I have learned,</p>
+    <section id="skills" className="skills-brutal">
+      <div className="brutal-header">
 
-      <ul className="skills-list">
-        <li><span className="icon"><SiHtml5 /></span> HTML</li>
-        <li><span className="icon"><SiCss3 /></span> CSS</li>
-        <li><span className="icon"><SiJavascript  /></span> JavaScript</li>
-        <li><span className="icon"><DiJava /></span> Java</li>
-        <li><span className="icon"><DiReact /></span> React JS</li>
-        <li><span className="icon"><SiSpringboot /></span> Spring Boot</li>
-        <li><span className="icon"><FaGithub /></span> Git & GitHub</li>
-        <li><span className="icon"><SiPostman /></span> Postman</li>
-        <li><span className="icon"><SiPostgresql /></span> PostgreSQL</li>
-        <li><span className="icon"><SiMetabase /></span> Metabase</li>
-        <li><span className="icon"><SiAppwrite /></span> Appwrite</li>
-        <li><span className="icon"><SiDocker /></span> Docker</li>
-        <li><span className="icon"><FaLightbulb /></span> Problem Solving</li>
-        <li><span className="icon"><FaBolt /></span> Fast Learner</li>
-        <li><span className="icon"><MdOutlineRecordVoiceOver  /></span> Good in communication</li>
-      </ul>
+        <h2 className="brutal-heading">TECHNICAL<br/>STACK</h2>
+        <p className="skills-intro-text">In Technical and Industry point of view what I have learned,</p>
+      </div>
+
+
+      <div className="skills-dynamic-grid">
+        {skillItems.map((item, idx) => (
+          <div key={idx} className="skill-box-brutal magnetic">
+            <span className="skill-icon">{item.icon}</span>
+            <span className="skill-label">{item.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="skills-marquee">
+        <div className="marquee-content">
+          <span>PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦ PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦</span>
+
+        </div>
+      </div>
     </section>
   );
 };

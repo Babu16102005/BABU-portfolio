@@ -45,7 +45,8 @@ const Skills = () => {
 
       <div className="skills-marquee">
         <div className="marquee-content">
-          <span>PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦ PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦</span>
+          <span>PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦ PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦&nbsp;</span>
+          <span>PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦ PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦&nbsp;</span>
 
         </div>
       </div>

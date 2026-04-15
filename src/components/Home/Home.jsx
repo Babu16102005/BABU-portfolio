@@ -1,14 +1,12 @@
 import React from 'react';
 import './Home.css';
-import { FaDownload } from 'react-icons/fa';
 import HyperKineticHero from '../animations/HyperKineticHero';
-import FluidRevealImage from '../animations/FluidRevealImage';
 import TextFillOnScroll from '../animations/TextFillOnScroll';
-import ParallaxStarsBackground from '../animations/ParallaxStarsBackground';
+import { LiquidMetalButton } from '../ui/liquid-metal-button';
 
 const Home = () => {
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  const handleDownload = () => {
+    window.open("https://drive.google.com/uc?export=download&id=1pxL9Ys0toRbp15KSnoi1P8tZ33smfQRE", "_blank");
   };
 
   return (
@@ -28,15 +26,10 @@ const Home = () => {
         </div>
 
         <div className="home-final-cta">
-          <a
-            href="https://drive.google.com/uc?export=download&id=1pxL9Ys0toRbp15KSnoi1P8tZ33smfQRE"
-            download="Babu_B_resume.pdf"
-            className="brutal-button-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>DOWNLOAD RESUME</span>
-          </a>
+          <LiquidMetalButton 
+            label="Download Resume" 
+            onClick={handleDownload}
+          />
         </div>
       </div>
     </section>

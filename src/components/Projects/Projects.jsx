@@ -19,15 +19,17 @@ const projectData = [
   },
 
   {
-    title: 'Future Build',
-    description: 'Next-generation interactive system currently in development phase.',
-    tech: ['Three.js', 'GSAP', 'WebGL'],
+    title: 'SOS Emergency System',
+    description: 'A critical safety infrastructure designed for instantaneous emergency response. Features one-tap SOS alerting, real-time GPS synchronization, and automated multi-channel notifications to trusted responder networks.',
+    tech: ['React Native', 'Firebase', 'Live GPS'],
+    domain: 'Public Safety',
     id: '03'
   },
   {
-    title: 'System Core',
-    description: 'Experimental dashboard for real-time data visualization and monitoring.',
-    tech: ['Rust', 'Wasm', 'React'],
+    title: 'PrivateChat',
+    description: 'A premium, atmospheric 1:1 messaging ecosystem featuring Obsidian and Mocha themes. Engineered with WebRTC for secure calling and Supabase for real-time synchronization and secure data architecture.',
+    tech: ['React Native', 'Supabase', 'WebRTC'],
+    domain: 'Private Ops',
     id: '04'
   },
 ];

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './HyperScrollScene.css';
 
 const CONFIG = {
-  itemCount: 12,
+  itemCount: 15,
   starCount: 150,
   zGap: 600,
   camSpeed: 2.5,
@@ -10,7 +10,7 @@ const CONFIG = {
 };
 CONFIG.loopSize = CONFIG.itemCount * CONFIG.zGap;
 
-const TEXTS = ["ACHIEVE", "PROJECT", "JAVA", "PYTHON"];
+const TEXTS = ["ACHIEVE", "CERTIFY", "COLLAB", "SOS-SAFE", "PRIVATE"];
 
 const PROOF_DATA = [
   {
@@ -32,10 +32,16 @@ const PROOF_DATA = [
     provider: "Team work"
   },
   {
-    category: "CERTIFICATION",
-    title: "Python Prog.",
-    desc: "Python Programming",
-    provider: "Ethnotech"
+    category: "PROJECT",
+    title: "SOS Alert",
+    desc: "Real-time emergency safety system with localized GPS sharing.",
+    provider: "Personal Project"
+  },
+  {
+    category: "PROJECT",
+    title: "Priv. Chat",
+    desc: "Encrypted 1:1 messaging with Obsidian atmospheric themes.",
+    provider: "Supabase Ops"
   }
 ];
 
@@ -95,6 +101,9 @@ const HyperScrollScene = () => {
             break;
           case 3:
             baseOffset = -1300;
+            break;
+          case 4:
+            baseOffset = -1450;
             break;
         }
 
@@ -251,8 +260,15 @@ const HyperScrollScene = () => {
     };
   }, [items]);
 
+    const totalCardTravel = (PROOF_DATA.length - 1) * 3 * CONFIG.zGap + 600;
+    const dynamicHeight = (totalCardTravel / CONFIG.camSpeed) + window.innerHeight;
+
   return (
-    <div ref={containerRef} className="hyper-scroll-container">
+    <div 
+      ref={containerRef} 
+      className="hyper-scroll-container" 
+      style={{ height: `${dynamicHeight}px` }}
+    >
       <div ref={viewportRef} id="hyper-viewport">
         {/* OVERLAYS contained within the sticky viewport */}
         <div className="scanlines"></div>

@@ -14,7 +14,6 @@
 .hyper-scroll-container {
   position: relative;
   width: 100%;
-  height: 400vh;
   background: var(--cyb-bg);
   overflow: visible;
   font-family: var(--font-display);
@@ -255,10 +254,6 @@
 }
 
 @media (max-width: 768px) {
-  .hyper-scroll-container {
-      height: 300vh; /* Shorter scroll for mobile */
-  }
-
   .hud {
     padding: 1rem;
     font-size: 8px;

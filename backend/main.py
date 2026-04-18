@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# State to store the bio text in memory (only a few KB)
 class AppState:
     def __init__(self):
         self.bio_content = ""
@@ -19,7 +18,6 @@ state = AppState()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: Load all text files from data folder
     data_dir = os.path.join(os.path.dirname(__file__), "data")
     if os.path.exists(data_dir):
         txt_files = glob.glob(os.path.join(data_dir, "*.txt"))
@@ -32,11 +30,7 @@ async def lifespan(app: FastAPI):
                 print(f"Error reading {file_path}: {e}")
         state.bio_content = all_text.strip()
     
-    if not state.bio_content:
-        print("Warning: No bio content found in data folder.")
-    else:
-        print(f"Loaded bio content ({len(state.bio_content)} characters).")
-        
+    print(f"Startup complete. Bio loaded: {len(state.bio_content)} chars.")
     yield
 
 app = FastAPI(lifespan=lifespan)
@@ -53,30 +47,29 @@ class ChatRequest(BaseModel):
     message: str
     model: Optional[str] = "google/gemini-2.0-flash-exp:free"
 
+@app.get("/")
+async def health_check():
+    return {
+        "status": "online",
+        "bio_loaded": len(state.bio_content) > 0,
+        "api_key_configured": os.getenv("OPENROUTER_API_KEY") is not None
+    }
+
 @app.post("/chat")
 async def chat(request: ChatRequest):
     api_key = os.getenv("OPENROUTER_API_KEY")
     if not api_key:
-        raise HTTPException(status_code=500, detail="API Key not configured on server.")
+        print("CRITICAL: OPENROUTER_API_KEY is missing!")
+        raise HTTPException(status_code=500, detail="API Key not configured in Render environment.")
 
-    # Build Prompt with FULL context
-    prompt = f"""You are Babu B, a Full Stack & AI Developer. You are chatting directly with a visitor on your portfolio website.
-Respond as yourself — as a real human named Babu, in first person ("I", "my", "me"). 
-Never say you are an AI or virtual assistant.
+    prompt = f"""You are Babu B, a Full Stack & AI Developer. Respond in first person ("I", "my"). 
 
-MY BACKGROUND AND DETAILS:
+MY BACKGROUND:
 {state.bio_content}
 
-VISITOR SAYS:
-{request.message}
+VISITOR: {request.message}
 
-INSTRUCTIONS:
-- Reply warmly and naturally.
-- If it's a greeting, keep it short (1-2 sentences).
-- For questions about my work, skills, or projects, use the background details above to answer accurately in first person.
-- If you don't know the answer based on the context, say something natural like "I haven't added that detail here yet, but feel free to ask me something else about my projects!"
-- Keep answers conversational and concise. Never be robotic.
-"""
+REPLY AS BABU:"""
 
     async with httpx.AsyncClient() as client:
         try:
@@ -94,18 +87,18 @@ INSTRUCTIONS:
             )
             
             if response.status_code != 200:
-                print(f"OpenRouter Error: {response.text}")
-                raise HTTPException(status_code=500, detail="Error from AI service.")
+                error_detail = response.text
+                print(f"OpenRouter Error ({response.status_code}): {error_detail}")
+                raise HTTPException(status_code=response.status_code, detail=f"AI service error: {error_detail}")
 
             result = response.json()
+            if 'choices' not in result or not result['choices']:
+                print(f"Unexpected response format: {result}")
+                raise HTTPException(status_code=500, detail="Invalid response from AI.")
+
             answer = result['choices'][0]['message']['content']
-            
             return {"answer": answer}
             
         except Exception as e:
-            print(f"Error: {str(e)}")
-            raise HTTPException(status_code=500, detail="Internal server error.")
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+            print(f"CHAT ERROR: {str(e)}")
+            raise HTTPException(status_code=500, detail=str(e))

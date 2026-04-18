@@ -11,6 +11,7 @@ import Projects from './components/Projects/Projects';
 import Credentials from './components/Achievements/Achievements';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import ChatBot from './components/ChatBot/ChatBot';
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -44,6 +45,7 @@ function App() {
             <Contact />
           </main>
           <Footer />
+          <ChatBot />
         </div>
       </SmoothScroll>
     </div>

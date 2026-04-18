@@ -1,0 +1,262 @@
+==================================================
+IDENTITY
+==================================================
+Name: Babu B  
+Role: Full Stack Developer | AI Developer | Software Engineer Intern  
+Location: Tamil Nadu, India  
+Email: babusanthosh6381@gmail.com  
+Phone: 6381837277  
+Portfolio: https://babu16101005.netlify.app/  
+LinkedIn: babu-b-395608299  
+
+--------------------------------------------------
+
+==================================================
+ABOUT / PROFESSIONAL SUMMARY
+==================================================
+Babu B is a highly motivated Full Stack Developer and aspiring AI Engineer with practical experience in building scalable web applications and intelligent systems. He specializes in combining modern frontend and backend technologies with AI capabilities to develop real-world solutions.
+
+He has hands-on experience with technologies such as React.js, FastAPI, Spring Boot, Java, and Python, along with database systems like PostgreSQL and Firebase. His work focuses on designing efficient backend APIs, creating responsive user interfaces, and integrating AI services into applications.
+
+Currently working as a Software Development Engineer (SDE) Intern at MUA Technologies Pvt Ltd, Babu contributes to backend engineering, cloud-based workflows, and application deployment processes.
+
+He has a strong interest in Generative AI, Retrieval-Augmented Generation (RAG), and AI-driven applications. His goal is to build intelligent systems that solve real-world problems and enhance user experiences.
+
+--------------------------------------------------
+
+==================================================
+CORE SKILLS & EXPERTISE
+==================================================
+- Full Stack Web Development  
+- AI Application Development  
+- REST API Design & Integration  
+- Backend Development (FastAPI, Spring Boot)  
+- Frontend Development (React.js)  
+- Database Management (SQL & NoSQL)  
+- AI Chatbot Development  
+- RAG (Retrieval-Augmented Generation) Systems  
+- Prompt Engineering  
+- Problem Solving & Data Structures  
+
+--------------------------------------------------
+
+==================================================
+TECHNICAL SKILLS
+==================================================
+
+Programming Languages:
+- Java  
+- JavaScript  
+- Python  
+
+Frontend Technologies:
+- HTML5  
+- CSS3  
+- React.js  
+
+Backend Technologies:
+- FastAPI  
+- Spring Boot  
+- RESTful APIs  
+
+Databases:
+- PostgreSQL  
+- Firebase  
+
+Tools & Platforms:
+- Git  
+- GitHub  
+- Docker  
+- Appwrite  
+- Postman  
+- Metabase  
+
+AI Technologies:
+- Generative AI APIs (Gemini, OpenRouter)  
+- RAG Architecture  
+- Embeddings & Vector Search (FAISS/Chroma)  
+
+Concepts:
+- Object-Oriented Programming (OOP)  
+- Data Structures (Intermediate)  
+- API Architecture  
+- Modular System Design  
+
+--------------------------------------------------
+
+==================================================
+PROJECTS (DETAILED)
+==================================================
+
+Project Title: Career Chatbot (AI-Based Career Assistant)
+
+Overview:
+A full-stack AI-powered application designed to help users choose career paths, improve skills, and access learning resources.
+
+Key Features:
+- AI chatbot for personalized career guidance  
+- Integration with Generative AI APIs  
+- YouTube API for learning content recommendations  
+- Aptitude test system  
+- User progress tracking  
+- Skill-based learning roadmap  
+- Secure authentication with Firebase  
+
+Tech Stack:
+React.js, FastAPI, Gemini API, YouTube API, Firebase  
+
+Architecture:
+- REST API-based backend  
+- Frontend communicates via API  
+- AI responses generated dynamically  
+
+Outcome:
+This project demonstrates Babu’s ability to build intelligent applications by integrating AI with full-stack development.
+
+--------------------------------------------------
+
+==================================================
+PROFESSIONAL EXPERIENCE
+==================================================
+
+Company: MUA Technologies Pvt Ltd (MUA Cloud)  
+Role: Software Development Engineer (Intern)  
+Duration: Dec 2025 – Jan 2026  
+
+Responsibilities:
+- Developed backend APIs for real-world applications  
+- Assisted in deploying cloud-based systems  
+- Configured backend services using Appwrite  
+- Practiced Git workflows and version control  
+- Worked on debugging and testing  
+
+Key Learnings:
+- Real-world software development lifecycle  
+- Deployment strategies and environment setup  
+- Backend system architecture  
+- Team collaboration and coding standards  
+
+--------------------------------------------------
+
+==================================================
+EDUCATION
+==================================================
+
+B.Tech – Information Technology  
+Mailam Engineering College (2023 – Present)  
+CGPA: 8.54  
+
+Higher Secondary Education:
+St. Ann’s Higher Secondary School  
+Percentage: 79%  
+
+--------------------------------------------------
+
+==================================================
+CERTIFICATIONS & ACHIEVEMENTS
+==================================================
+
+- First Prize in Paper Presentation (3 times)  
+- Java Fundamentals Certification  
+- Python Certification  
+
+--------------------------------------------------
+
+==================================================
+LEADERSHIP & COMMUNITY
+==================================================
+
+Event Coordinator – INTELINFO 2K25  
+- Managed technical event planning and execution  
+- Coordinated participants and scheduling  
+
+Volunteer & Student Coordinator – VGLUG  
+- Supported open-source learning community  
+- Conducted technical sessions and mentoring  
+
+--------------------------------------------------
+
+==================================================
+SOFT SKILLS
+==================================================
+
+- Problem Solving  
+- Communication Skills  
+- Team Collaboration  
+- Fast Learner  
+- Leadership  
+
+--------------------------------------------------
+
+==================================================
+INTERESTS & CAREER GOALS
+==================================================
+
+- Building AI-powered applications  
+- Generative AI and LLM systems  
+- RAG-based chatbot systems  
+- Full-stack system design  
+- Open-source contribution  
+
+--------------------------------------------------
+
+==================================================
+AI ASSISTANT PERSONALITY (CRITICAL FOR RAG)
+==================================================
+
+You are an AI assistant representing Babu B.
+
+Behavior Rules:
+- Answer professionally and clearly  
+- Use only the provided data  
+- If information is missing, say: "I don't have that information"  
+- Highlight skills, projects, and experience where relevant  
+- Keep answers concise but informative  
+
+Tone:
+- Professional  
+- Helpful  
+- Confident  
+
+--------------------------------------------------
+
+==================================================
+QUESTION-ANSWER KNOWLEDGE BASE
+==================================================
+
+Q: Who is Babu?
+A: Babu B is a Full Stack Developer and AI Developer with experience in building web applications and AI-powered systems using React.js, FastAPI, and modern backend technologies.
+
+Q: What are Babu's skills?
+A: Babu's skills include Java, Python, JavaScript, React.js, FastAPI, Spring Boot, PostgreSQL, Firebase, Docker, and AI integration.
+
+Q: What projects has Babu built?
+A: Babu developed a Career Chatbot, an AI-powered application that provides career guidance, learning recommendations, and skill tracking.
+
+Q: Does Babu have AI experience?
+A: Yes, Babu has experience integrating Generative AI APIs and building AI-powered chatbot systems using RAG concepts.
+
+Q: Where did Babu work?
+A: Babu worked as a Software Development Engineer Intern at MUA Technologies Pvt Ltd.
+
+Q: What are Babu’s interests?
+A: Babu is interested in Generative AI, chatbot development, full-stack engineering, and building intelligent systems.
+
+--------------------------------------------------
+
+==================================================
+SEARCH KEYWORDS (FOR BETTER RETRIEVAL)
+==================================================
+
+Babu Full Stack Developer  
+AI Developer Tamil Nadu  
+React FastAPI Developer  
+Career Chatbot Project  
+Java Spring Boot Developer  
+RAG Chatbot Developer  
+AI Portfolio Developer  
+Software Engineer Intern India  
+
+==================================================
+END OF FILE
+==================================================

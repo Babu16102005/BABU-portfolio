@@ -182,7 +182,7 @@ const HyperScrollScene = () => {
       lastScroll = currentScroll;
 
       // HUD Updates (Removed as per request)
-      
+
       const delta = time - lastTime;
       lastTime = time;
 
@@ -203,7 +203,7 @@ const HyperScrollScene = () => {
 
         let relZ = item.baseZ + cameraZ;
         let vizZ = relZ;
-        
+
         // Loop only the background stars to ensure they persist indefinitely
         if (item.type === 'star') {
           vizZ = ((relZ % modC) + modC) % modC;
@@ -260,13 +260,13 @@ const HyperScrollScene = () => {
     };
   }, [items]);
 
-    const totalCardTravel = (PROOF_DATA.length - 1) * 3 * CONFIG.zGap + 600;
-    const dynamicHeight = (totalCardTravel / CONFIG.camSpeed) + window.innerHeight;
+  const totalCardTravel = (PROOF_DATA.length - 1) * 3 * CONFIG.zGap + 600;
+  const dynamicHeight = (totalCardTravel / CONFIG.camSpeed) + window.innerHeight;
 
   return (
-    <div 
-      ref={containerRef} 
-      className="hyper-scroll-container" 
+    <div
+      ref={containerRef}
+      className="hyper-scroll-container"
       style={{ height: `${dynamicHeight}px` }}
     >
       <div ref={viewportRef} id="hyper-viewport">

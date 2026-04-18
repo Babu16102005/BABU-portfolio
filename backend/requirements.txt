@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+faiss-cpu
+sentence-transformers
+httpx
+python-dotenv
+python-multipart

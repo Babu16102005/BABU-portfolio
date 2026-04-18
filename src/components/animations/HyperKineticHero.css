@@ -117,18 +117,20 @@
 
 .brutal-nav.scrolled {
   top: 1rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   padding: 0.6rem 1.2rem;
-  width: calc(100% - 2rem);
+  width: calc(100% - 4rem);
   max-width: 600px;
   min-width: unset;
-  left: 50%;
-  transform: translateX(-50%);
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(25px) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50px; /* Capsule look */
+  border-radius: 50px;
   mix-blend-mode: normal;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  transform: none;
 }
 
 .nav-logo {
@@ -313,7 +315,7 @@
   transform: translateX(-50%);
   width: 100%;
   height: 85vh;
-  z-index: -1;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -334,14 +336,16 @@
 
 .hero h1 {
   font-family: 'Syncopate', sans-serif;
-  font-size: clamp(3rem, 10vw, 12rem);
-  line-height: 1;
+  font-size: clamp(5rem, 18vw, 22rem);
+  line-height: 0.9;
   text-transform: uppercase;
   font-weight: 800;
   color: transparent;
   -webkit-text-stroke: clamp(1px, 0.2vw, 3px) var(--hero-fg);
   mix-blend-mode: color-dodge;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-role {
@@ -377,9 +381,9 @@
   }
 
   .hero h1 {
-    font-size: 15vw;
+    font-size: 22vw;
     margin: 0;
-    z-index: 10;
+    z-index: 1;
     pointer-events: none;
     -webkit-text-stroke: 1px var(--hero-fg);
   }

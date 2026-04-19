@@ -31,7 +31,7 @@ const ChatBot = () => {
             // If we are scrolling inside the box, always stop the event 
             // from reaching Lenis or the main page scroll.
             e.stopPropagation();
-            
+
             // Optional: If you want to prevent the page from scrolling 
             // even when the chat has reached the end:
             // e.preventDefault(); 
@@ -68,12 +68,12 @@ const ChatBot = () => {
 
             const data = await response.json();
             const fullAnswer = data.answer;
-            
+
             // Start typing effect
-            setMessages(prev => [...prev, { 
-                role: 'assistant', 
+            setMessages(prev => [...prev, {
+                role: 'assistant',
                 content: '',
-                sources: data.sources 
+                sources: data.sources
             }]);
 
             let currentText = '';
@@ -89,9 +89,9 @@ const ChatBot = () => {
             }
 
         } catch (error) {
-            setMessages(prev => [...prev, { 
-                role: 'assistant', 
-                content: "I'm having trouble connecting to my brain right now. Please make sure the backend is running." 
+            setMessages(prev => [...prev, {
+                role: 'assistant',
+                content: "I'm having trouble connecting to my brain right now. Please make sure the backend is running."
             }]);
         } finally {
             setLoading(false);
@@ -101,13 +101,13 @@ const ChatBot = () => {
     return (
         <div className={`chatbot-container ${isOpen ? 'is-open' : ''}`}>
             {/* Toggle Button */}
-            <button 
-                className="chatbot-toggle" 
+            <button
+                className="chatbot-toggle"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle Chat"
             >
                 {isOpen ? (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12" /></svg>
                 ) : (
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M12 8V4H8" />
@@ -121,7 +121,7 @@ const ChatBot = () => {
             </button>
 
             {/* Chat Window */}
-            <div 
+            <div
                 className="chatbot-window"
                 onMouseEnter={() => window.lenis?.stop()}
                 onMouseLeave={() => window.lenis?.start()}
@@ -152,8 +152,8 @@ const ChatBot = () => {
                 </div>
 
                 <div className="chatbot-input">
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleSend()}

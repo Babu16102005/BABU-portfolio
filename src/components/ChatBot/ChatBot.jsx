@@ -58,11 +58,7 @@ const ChatBot = () => {
         // I will just send the current message to the backend as specified in the plan.
 
         try {
-            const backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-                ? 'http://localhost:8000/chat' 
-                : 'https://babu-portfolio-gsp5.onrender.com/chat';
-            
-            const response = await fetch(backendUrl, {
+            const response = await fetch('https://babu-portfolio-gsp5.onrender.com/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: input })

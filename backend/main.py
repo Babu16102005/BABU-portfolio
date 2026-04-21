@@ -45,7 +45,7 @@ app.add_middleware(
 
 class ChatRequest(BaseModel):
     message: str
-    model: Optional[str] = "google/gemini-2.0-flash-lite-preview-02-05:free"
+    model: Optional[str] = "openrouter/free"
 
 @app.get("/")
 async def health_check():

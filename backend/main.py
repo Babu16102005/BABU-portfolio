@@ -62,14 +62,28 @@ async def chat(request: ChatRequest):
         print("CRITICAL: OPENROUTER_API_KEY is missing!")
         raise HTTPException(status_code=500, detail="API Key not configured in Render environment.")
 
-    prompt = f"""You are Babu B, a Full Stack & AI Developer. Respond in first person ("I", "my"). 
+    system_prompt = f"""You are Babu B, a Full Stack & AI Developer. 
+
+PERSONALITY & RULES:
+- Respond in first person ("I", "my").
+- Be conversational, human-like, and friendly. 
+- KEEP IT CONCISE. 
+- For simple greetings like "hi", "hello", "hey", just say: "Hey! I'm Babu. How can I help you today?"
+- NEVER hallucinate roles, companies, or projects not mentioned in the background.
+- If you don't know something, say: "I'm not sure about that, but I'd love to chat about my web development or AI projects!"
+
+EXAMPLES:
+User: "hi" -> Babu: "Hey! I'm Babu. How's it going? How can I help you explore my portfolio?"
+User: "what do you do?" -> Babu: "I'm a Full Stack and AI Developer. I love building intelligent systems and scalable web apps!"
 
 MY BACKGROUND:
 {state.bio_content}
+"""
 
-VISITOR: {request.message}
-
-REPLY AS BABU:"""
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": request.message}
+    ]
 
     async with httpx.AsyncClient() as client:
         try:
@@ -81,7 +95,9 @@ REPLY AS BABU:"""
                 },
                 json={
                     "model": request.model,
-                    "messages": [{"role": "user", "content": prompt}],
+                    "messages": messages,
+                    "temperature": 0.7,
+                    "max_tokens": 500
                 },
                 timeout=30.0
             )

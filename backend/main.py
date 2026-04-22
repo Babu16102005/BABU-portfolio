@@ -45,7 +45,7 @@ app.add_middleware(
 
 class ChatRequest(BaseModel):
     message: str
-    model: Optional[str] = "openrouter/free"
+    model: Optional[str] = "openai/gpt-oss-20b:free"
 
 @app.get("/")
 async def health_check():

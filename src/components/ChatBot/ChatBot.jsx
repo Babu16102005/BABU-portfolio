@@ -127,7 +127,7 @@ const ChatBot = () => {
                 onMouseLeave={() => window.lenis?.start()}
             >
                 <div className="chatbot-header">
-                    <h3>GPT-OSS-20B Assistant</h3>
+                    <h3>AI Assistant</h3>
                     <div className="status-indicator"></div>
                 </div>
 

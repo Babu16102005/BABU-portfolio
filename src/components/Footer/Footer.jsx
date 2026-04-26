@@ -11,7 +11,7 @@ const Footer = () => {
           <h2 className="brutal-logo">BABU</h2>
           <p>© 2026_SYSTEM_OPERATIONAL</p>
         </div>
-        
+
         <div className="footer-links">
           <div className="social-row">
             <a href="https://github.com/Babu16102005" target="_blank" rel="noopener noreferrer" className="social-link-brutal"><FaGithub /></a>

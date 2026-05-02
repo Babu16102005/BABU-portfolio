@@ -26,10 +26,10 @@ const projectData = [
     id: '03'
   },
   {
-    title: 'PrivateChat',
+    title: 'Kiba',
     description: 'A premium, atmospheric 1:1 messaging ecosystem featuring Obsidian and Mocha themes. Engineered with WebRTC for secure calling and Supabase for real-time synchronization and secure data architecture.',
     tech: ['React Native', 'Supabase', 'WebRTC'],
-    domain: 'Private Ops',
+    domain: 'Chat Mobile Application',
     id: '04'
   },
 ];

@@ -15,9 +15,30 @@
   margin-bottom: clamp(5vh, 10vh, 15vh);
 }
 
-.brutal-body {
+.about-body {
   display: flex;
   flex-direction: column;
-  gap: clamp(5vh, 10vh, 15vh);
+  gap: clamp(2vh, 4vh, 8vh);
+}
+
+.about-text {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.6;
+  color: #a0a0a0;
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  .about-brutal {
+    padding: 10vh 5vw;
+  }
+  
+  .about-body {
+    gap: 1.5rem;
+  }
+
+  .brutal-header {
+    margin-bottom: 5vh;
+  }
 }
 

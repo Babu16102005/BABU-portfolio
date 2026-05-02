@@ -16,7 +16,7 @@ const About = () => {
             I'm Babu B, currently focused on Full Stack Development. I have a strong passion for technology and problem-solving, always eager to tackle challenges and build meaningful solutions.
           </p>
           <p className="about-text">
-            As a fast learner and enthusiastic developer, I continuously expand my skills across front-end and back-end technologies, including Java, React, Spring Boot and PostgreSQL. I thrive in collaborative environments and enjoy creating projects that combine creativity with technical expertise.
+            As a fast learner and enthusiastic developer, I continuously expand my skills across front-end and back-end technologies, including Java, React, Spring Boot, PostgreSQL, and FastAPI. I am also proficient in advanced AI architectures like RAG (Retrieval-Augmented Generation) for building intelligent applications.
           </p>
           <p className="about-text">
             Beyond coding, I am committed to improving my skills, exploring new technologies, and contributing to impactful projects that make a difference.

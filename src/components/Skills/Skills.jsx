@@ -1,10 +1,10 @@
 import React from 'react';
 import './Skills.css';
 import { DiJava, DiReact } from 'react-icons/di';
-import { FaBolt, FaLightbulb, FaGithub } from 'react-icons/fa';
+import { FaBolt, FaLightbulb, FaGithub, FaBrain } from 'react-icons/fa';
 import {
   SiHtml5, SiCss3, SiJavascript, SiSpringboot, SiPostman, SiMetabase,
-  SiDocker, SiPostgresql, SiAppwrite,
+  SiDocker, SiPostgresql, SiAppwrite, SiFastapi
 } from 'react-icons/si';
 import { MdOutlineRecordVoiceOver } from 'react-icons/md';
 
@@ -21,6 +21,8 @@ const skillItems = [
   { icon: <SiMetabase />, label: 'Metabase' },
   { icon: <SiAppwrite />, label: 'Appwrite' },
   { icon: <SiDocker />, label: 'Docker' },
+  { icon: <SiFastapi />, label: 'FastAPI' },
+  { icon: <FaBrain />, label: 'RAG' },
 ];
 
 
@@ -45,8 +47,8 @@ const Skills = () => {
 
       <div className="skills-marquee">
         <div className="marquee-content">
-          <span>PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦ PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦&nbsp;</span>
-          <span>PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦ PROBLEM SOLVING ✦ FAST LEARNER ✦ GOOD IN COMMUNICATION ✦&nbsp;</span>
+          <span>PROBLEM SOLVING ✦ FAST LEARNER ✦ RAG & FASTAPI ✦ PROBLEM SOLVING ✦ FAST LEARNER ✦ RAG & FASTAPI ✦&nbsp;</span>
+          <span>PROBLEM SOLVING ✦ FAST LEARNER ✦ RAG & FASTAPI ✦ PROBLEM SOLVING ✦ FAST LEARNER ✦ RAG & FASTAPI ✦&nbsp;</span>
 
         </div>
       </div>

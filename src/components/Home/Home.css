@@ -58,6 +58,15 @@
 }
 
 @media (max-width: 768px) {
+  .home-main-content {
+    padding: 3vh 5vw;
+    gap: 2vh;
+  }
+
+  .home-text-sections {
+    gap: 0.5vh;
+  }
+
   .brutal-button-link {
     border-width: 2px;
     box-shadow: 6px 6px 0 #000;

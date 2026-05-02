@@ -2,7 +2,13 @@
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
-  padding: clamp(2rem, 8vh, 4rem) 1.5rem;
+  padding: clamp(1rem, 4vh, 2rem) 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .text-fill-container {
+    padding: 0.5rem 1rem;
+  }
 }
 
 .fill-text {

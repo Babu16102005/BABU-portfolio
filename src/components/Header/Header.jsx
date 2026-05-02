@@ -42,6 +42,7 @@ const Header = () => {
           <li className="nav-item"><a href="#skills" onClick={closeMenu}>Skills</a></li>
           <li className="nav-item"><a href="#projects" onClick={closeMenu}>Projects</a></li>
           <li className="nav-item"><a href="#credentials" onClick={closeMenu}>Credentials</a></li>
+          <li className="nav-item"><a href="https://drive.google.com/file/d/1mBN6ajP7a70U85v5MIuyLdBpkZiiFoFe/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Resume</a></li>
           <li className="nav-item"><a href="#contact" onClick={closeMenu}>Contact</a></li>
         </ul>
       </nav>

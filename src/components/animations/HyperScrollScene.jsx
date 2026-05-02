@@ -15,8 +15,8 @@ const TEXTS = ["ACHIEVE", "CERTIFY", "COLLAB", "SOS-SAFE", "PRIVATE"];
 const PROOF_DATA = [
   {
     category: "ACHIEVEMENT",
-    title: "1st Prize x2",
-    desc: "We won the 1st prize x2 in the Paper Presentation.",
+    title: "1st Prize x3",
+    desc: "We won the 1st prize 3 times in the Paper Presentation.",
     provider: "presentation"
   },
   {

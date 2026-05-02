@@ -6,7 +6,7 @@ import { LiquidMetalButton } from '../ui/liquid-metal-button';
 
 const Home = () => {
   const handleDownload = () => {
-    window.open("https://drive.google.com/uc?export=download&id=1pxL9Ys0toRbp15KSnoi1P8tZ33smfQRE", "_blank");
+    window.open("https://drive.google.com/file/d/1mBN6ajP7a70U85v5MIuyLdBpkZiiFoFe/view?usp=drive_link", "_blank");
   };
 
   return (
@@ -21,13 +21,13 @@ const Home = () => {
           </TextFillOnScroll>
 
           <TextFillOnScroll>
-            MY WORK BLENDS BRUTALIST AESTHETICS WITH FLUID ANIMATIONS TO CREATE DIGITAL EXPERIENCES THAT ARE BOTH MEMORABLE AND FUNCTIONAL.
+            MY WORK BLENDS BRUTALIST AESTHETICS WITH FLUID ANIMATIONS, SPECIALIZING IN AI-POWERED SOLUTIONS USING RAG AND FASTAPI.
           </TextFillOnScroll>
         </div>
 
         <div className="home-final-cta">
-          <LiquidMetalButton 
-            label="Download Resume" 
+          <LiquidMetalButton
+            label="Download Resume"
             onClick={handleDownload}
           />
         </div>

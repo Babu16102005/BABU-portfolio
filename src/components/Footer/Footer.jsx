@@ -9,9 +9,8 @@ const Footer = () => {
       <div className="footer-grid">
         <div className="footer-brand">
           <h2 className="brutal-logo">BABU</h2>
-          <p>© 2026_SYSTEM_OPERATIONAL</p>
+          <p>© 2026 BABU B. All rights reserved.</p>
         </div>
-
         <div className="footer-links">
           <div className="social-row">
             <a href="https://github.com/Babu16102005" target="_blank" rel="noopener noreferrer" className="social-link-brutal"><FaGithub /></a>
@@ -23,7 +22,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-tagline">
-          <span>BUILT_WITH_PURE_INTENT</span>
+          <span>BUILT_BY_BABU_B</span>
         </div>
       </div>
     </footer>

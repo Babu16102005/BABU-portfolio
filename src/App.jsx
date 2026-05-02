@@ -35,7 +35,7 @@ function App() {
       </div>
 
       <SmoothScroll>
-        <div className="App" aria-hidden={showLoader ? 'true' : undefined} inert={showLoader ? '' : undefined}>
+        <div className="App" aria-hidden={showLoader ? 'true' : undefined} inert={showLoader ? true : undefined}>
           <main id="main-content">
             <Home />
             <About />

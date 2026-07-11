@@ -10,11 +10,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class AppState:
     def __init__(self):
         self.bio_content = ""
 
+
 state = AppState()
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -29,9 +32,10 @@ async def lifespan(app: FastAPI):
             except Exception as e:
                 print(f"Error reading {file_path}: {e}")
         state.bio_content = all_text.strip()
-    
+
     print(f"Startup complete. Bio loaded: {len(state.bio_content)} chars.")
     yield
+
 
 app = FastAPI(lifespan=lifespan)
 
@@ -43,24 +47,29 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+VSLLM_BASE_URL = os.getenv("VSLLM_BASE_URL", "https://api.vsllm.com/v1")
+
+
 class ChatRequest(BaseModel):
     message: str
-    model: Optional[str] = "openai/gpt-oss-20b:free"
+    model: Optional[str] = "deepseek-v4-flash-free"
+
 
 @app.get("/")
 async def health_check():
     return {
         "status": "online",
         "bio_loaded": len(state.bio_content) > 0,
-        "api_key_configured": os.getenv("OPENROUTER_API_KEY") is not None
+        "api_key_configured": os.getenv("VSLLM_API_KEY") is not None,
     }
+
 
 @app.post("/chat")
 async def chat(request: ChatRequest):
-    api_key = os.getenv("OPENROUTER_API_KEY")
+    api_key = os.getenv("VSLLM_API_KEY")
     if not api_key:
-        print("CRITICAL: OPENROUTER_API_KEY is missing!")
-        raise HTTPException(status_code=500, detail="API Key not configured in Render environment.")
+        print("CRITICAL: VSLLM_API_KEY is missing!")
+        raise HTTPException(status_code=500, detail="API Key not configured.")
 
     system_prompt = f"""You are Babu B, a Full Stack & AI Developer. 
 
@@ -82,13 +91,13 @@ MY BACKGROUND:
 
     messages = [
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": request.message}
+        {"role": "user", "content": request.message},
     ]
 
     async with httpx.AsyncClient() as client:
         try:
             response = await client.post(
-                "https://openrouter.ai/api/v1/chat/completions",
+                f"{VSLLM_BASE_URL}/chat/completions",
                 headers={
                     "Authorization": f"Bearer {api_key}",
                     "Content-Type": "application/json",
@@ -97,24 +106,33 @@ MY BACKGROUND:
                     "model": request.model,
                     "messages": messages,
                     "temperature": 0.7,
-                    "max_tokens": 500
+                    "max_tokens": 2000,
                 },
-                timeout=30.0
+                timeout=60.0,
             )
-            
+
             if response.status_code != 200:
                 error_detail = response.text
-                print(f"OpenRouter Error ({response.status_code}): {error_detail}")
-                raise HTTPException(status_code=response.status_code, detail=f"AI service error: {error_detail}")
+                print(f"VSLLM Error ({response.status_code}): {error_detail}")
+                raise HTTPException(
+                    status_code=response.status_code,
+                    detail=f"AI service error: {error_detail}",
+                )
 
             result = response.json()
-            if 'choices' not in result or not result['choices']:
+            if "choices" not in result or not result["choices"]:
                 print(f"Unexpected response format: {result}")
                 raise HTTPException(status_code=500, detail="Invalid response from AI.")
 
-            answer = result['choices'][0]['message']['content']
+            answer = result["choices"][0]["message"]["content"]
             return {"answer": answer}
-            
+
         except Exception as e:
             print(f"CHAT ERROR: {str(e)}")
             raise HTTPException(status_code=500, detail=str(e))
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

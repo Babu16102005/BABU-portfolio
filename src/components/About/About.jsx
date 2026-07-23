@@ -13,13 +13,13 @@ const About = () => {
 
         <div className="about-body">
           <p className="about-text">
-            I'm Babu B, currently focused on Full Stack Development. I have a strong passion for technology and problem-solving, always eager to tackle challenges and build meaningful solutions.
+            I'm Babu B, a Full Stack Developer skilled in Java, Spring Boot, React.js, and SQL. Currently working as an SDE Intern at MUA Technologies Pvt Ltd, I specialize in building scalable web applications and AI-powered solutions.
           </p>
           <p className="about-text">
-            As a fast learner and enthusiastic developer, I continuously expand my skills across front-end and back-end technologies, including Java, React, Spring Boot, PostgreSQL, and FastAPI. I am also proficient in advanced AI architectures like RAG (Retrieval-Augmented Generation) for building intelligent applications.
+            My technical toolkit spans Java, Python, JavaScript, FastAPI, PostgreSQL, Firebase, Docker, and advanced AI architectures like RAG (Retrieval-Augmented Generation). I've built projects like Smart Mentis (AI career guidance), VITA5 (emergency safety app), and KIBA (secure messaging app).
           </p>
           <p className="about-text">
-            Beyond coding, I am committed to improving my skills, exploring new technologies, and contributing to impactful projects that make a difference.
+            Beyond coding, I'm an active open-source contributor, event coordinator at INTELINFO 2K25, and volunteer at VGLUG. I hold certifications in Java, Python, and Artificial Intelligence from IBM SkillsBuild.
           </p>
         </div>
       </div>

@@ -2,19 +2,22 @@
 IDENTITY
 ==================================================
 Name: Babu B  
-Role: Full Stack Developer | AI Developer | Software Engineer Intern  
+Role: Full Stack Developer | Software Engineer Intern  
 Location: Tamil Nadu, India  
 Email: babusanthosh6381@gmail.com  
 Phone: 6381837277  
 Portfolio: https://babu16101005.netlify.app/  
 LinkedIn: babu-b-395608299  
+GitHub: Babu16102005  
+LeetCode: babusanthosh6381  
+HackerRank: babusanthosh6381  
 
 --------------------------------------------------
 
 ==================================================
 ABOUT / PROFESSIONAL SUMMARY
 ==================================================
-Babu B is a highly motivated Full Stack Developer and aspiring AI Engineer with practical experience in building scalable web applications and intelligent systems. He specializes in combining modern frontend and backend technologies with AI capabilities to develop real-world solutions.
+Full Stack Developer skilled in Java, Spring Boot, React.js, and SQL, currently working as an SDE Intern at MUA Technologies Pvt Ltd. Strong in REST APIs, OOP, and data structures. AI-powered developer focused on building efficient solutions faster through smart automation.
 
 He has hands-on experience with technologies such as React.js, FastAPI, Spring Boot, Java, and Python, along with database systems like PostgreSQL and Firebase. His work focuses on designing efficient backend APIs, creating responsive user interfaces, and integrating AI services into applications.
 
@@ -62,6 +65,7 @@ Backend Technologies:
 Databases:
 - PostgreSQL  
 - Firebase  
+- MongoDB  
 
 Tools & Platforms:
 - Git  
@@ -72,13 +76,13 @@ Tools & Platforms:
 - Metabase  
 
 AI Technologies:
-- Generative AI APIs (Gemini, OpenRouter)  
+- Generative AI APIs (Gemini, OpenRouter, NVIDIA)  
 - RAG Architecture  
 - Embeddings & Vector Search (FAISS/Chroma)  
 
 Concepts:
 - Object-Oriented Programming (OOP)  
-- Data Structures (Intermediate)  
+- Data Structures & Algorithms  
 - API Architecture  
 - Modular System Design  
 
@@ -88,30 +92,59 @@ Concepts:
 PROJECTS (DETAILED)
 ==================================================
 
-Project Title: Career Chatbot (AI-Based Career Assistant)
+Project Title: Smart Mentis — AI Career Guidance Platform
 
 Overview:
-A full-stack AI-powered application designed to help users choose career paths, improve skills, and access learning resources.
-
-Key Features:
-- AI chatbot for personalized career guidance  
-- Integration with Generative AI APIs  
-- YouTube API for learning content recommendations  
-- Aptitude test system  
-- User progress tracking  
-- Skill-based learning roadmap  
-- Secure authentication with Firebase  
+An AI-powered career guidance platform that helps users explore career paths through personalized chatbot interactions, MCQ generation, learning resources, and video recommendations.
 
 Tech Stack:
-React.js, FastAPI, Gemini API, YouTube API, Firebase  
+React.js, FastAPI, MongoDB, Gemini API, YouTube API
 
-Architecture:
-- REST API-based backend  
-- Frontend communicates via API  
-- AI responses generated dynamically  
+Features:
+- AI chatbot for personalized career guidance  
+- MCQ aptitude test generation  
+- YouTube learning content recommendations  
+- Skill-based learning roadmap  
+- Secure authentication
 
 Outcome:
-This project demonstrates Babu’s ability to build intelligent applications by integrating AI with full-stack development.
+Built using React, FastAPI, MongoDB, Gemini API, and YouTube API. Demonstrates ability to build intelligent applications integrating AI with full-stack development.
+
+Date: September 2025
+
+--------------------------------------------------
+
+Project Title: VITA5 — Emergency Safety App
+
+Overview:
+A safety application designed to send emergency alerts and location details to trusted contacts during critical situations. Helps users quickly request assistance with a single action.
+
+Tech Stack:
+React Native, Firebase, Live GPS
+
+Features:
+- One-tap SOS alerting  
+- Real-time GPS location sharing  
+- Automated multi-channel notifications to trusted contacts  
+
+Date: February 2026
+
+--------------------------------------------------
+
+Project Title: KIBA — Secure Messaging App
+
+Overview:
+A secure real-time messaging application that enables users to communicate privately through instant messaging features such as authentication, personal chats, and secure data handling.
+
+Tech Stack:
+React Native, Supabase, WebRTC
+
+Features:
+- Secure 1:1 messaging  
+- Real-time synchronization  
+- Secure authentication and data handling  
+
+Date: April 2026
 
 --------------------------------------------------
 
@@ -124,11 +157,10 @@ Role: Software Development Engineer (Intern)
 Duration: Dec 2025 – Jan 2026  
 
 Responsibilities:
-- Developed backend APIs for real-world applications  
-- Assisted in deploying cloud-based systems  
-- Configured backend services using Appwrite  
-- Practiced Git workflows and version control  
-- Worked on debugging and testing  
+- Gained hands-on experience in self-hosted project setup, deployment concepts, and environment configuration
+- Worked with Appwrite for authentication and database management
+- Learned Git, project structure, and real-world development practices
+- Assisted in cloud service configuration and documented project workflows under professional standards
 
 Key Learnings:
 - Real-world software development lifecycle  
@@ -144,10 +176,10 @@ EDUCATION
 
 B.Tech – Information Technology  
 Mailam Engineering College (2023 – Present)  
-CGPA: 8.54  
+CGPA: 8.51  
 
 Higher Secondary Education:
-St. Ann’s Higher Secondary School  
+St. Ann's Higher Secondary School  
 Percentage: 79%  
 
 --------------------------------------------------
@@ -157,8 +189,9 @@ CERTIFICATIONS & ACHIEVEMENTS
 ==================================================
 
 - First Prize in Paper Presentation (3 times)  
-- Java Fundamentals Certification  
-- Python Certification  
+- Java Fundamentals Certification (August 2025)  
+- Python Certification (October 2025)  
+- Getting Started with Artificial Intelligence Certification — IBM SkillsBuild  
 
 --------------------------------------------------
 
@@ -166,13 +199,15 @@ CERTIFICATIONS & ACHIEVEMENTS
 LEADERSHIP & COMMUNITY
 ==================================================
 
-Event Coordinator – INTELINFO 2K25  
+Event Coordinator – INTELINFO 2K25, Department of IT, Mailam Engineering College (Oct 2025)
 - Managed technical event planning and execution  
 - Coordinated participants and scheduling  
+- Ensured smooth execution and professional coordination with judges and participants
 
-Volunteer & Student Coordinator – VGLUG  
-- Supported open-source learning community  
-- Conducted technical sessions and mentoring  
+Volunteer & Student Coordinator – VGLUG, Villupuram (2024 – 2025)
+- Actively contributed to an open-source learning community focused on IT and technology  
+- Assisted in organizing technical sessions and supporting learners  
+- Managed paper presentation events, participant registration, scheduling, and event flow  
 
 --------------------------------------------------
 
@@ -225,22 +260,28 @@ QUESTION-ANSWER KNOWLEDGE BASE
 ==================================================
 
 Q: Who is Babu?
-A: Babu B is a Full Stack Developer and AI Developer with experience in building web applications and AI-powered systems using React.js, FastAPI, and modern backend technologies.
+A: Babu B is a Full Stack Developer and Software Engineer Intern skilled in Java, Spring Boot, React.js, FastAPI, and AI integration. He is currently working at MUA Technologies Pvt Ltd.
 
 Q: What are Babu's skills?
-A: Babu's skills include Java, Python, JavaScript, React.js, FastAPI, Spring Boot, PostgreSQL, Firebase, Docker, and AI integration.
+A: Babu's skills include Java, Python, JavaScript, React.js, FastAPI, Spring Boot, PostgreSQL, MongoDB, Firebase, Docker, Git, and AI integration.
 
 Q: What projects has Babu built?
-A: Babu developed a Career Chatbot, an AI-powered application that provides career guidance, learning recommendations, and skill tracking.
+A: Babu built three main projects: Smart Mentis (AI career guidance platform), VITA5 (emergency safety app), and KIBA (secure messaging app).
 
 Q: Does Babu have AI experience?
-A: Yes, Babu has experience integrating Generative AI APIs and building AI-powered chatbot systems using RAG concepts.
+A: Yes, Babu has extensive experience integrating Generative AI APIs (Gemini, OpenRouter, NVIDIA) and building AI-powered chatbot systems using RAG concepts.
 
 Q: Where did Babu work?
-A: Babu worked as a Software Development Engineer Intern at MUA Technologies Pvt Ltd.
+A: Babu worked as a Software Development Engineer Intern at MUA Technologies Pvt Ltd (MUA Cloud) from Dec 2025 to Jan 2026.
 
-Q: What are Babu’s interests?
+Q: What are Babu's interests?
 A: Babu is interested in Generative AI, chatbot development, full-stack engineering, and building intelligent systems.
+
+Q: What certifications does Babu hold?
+A: Babu holds Java Fundamentals Certification, Python Certification, and Getting Started with Artificial Intelligence Certification from IBM SkillsBuild. He also won First Prize in Paper Presentation three times.
+
+Q: What is Babu's education?
+A: Babu is pursuing B.Tech in Information Technology at Mailam Engineering College (2023-Present) with a CGPA of 8.51.
 
 --------------------------------------------------
 
@@ -249,13 +290,16 @@ SEARCH KEYWORDS (FOR BETTER RETRIEVAL)
 ==================================================
 
 Babu Full Stack Developer  
-AI Developer Tamil Nadu  
+Software Engineer Intern Tamil Nadu  
 React FastAPI Developer  
-Career Chatbot Project  
+Smart Mentis Career Chatbot  
+VITA5 Safety App  
+KIBA Messaging App  
 Java Spring Boot Developer  
 RAG Chatbot Developer  
 AI Portfolio Developer  
-Software Engineer Intern India  
+MUA Technologies Intern  
+Mailam Engineering College  
 
 ==================================================
 END OF FILE

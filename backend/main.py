@@ -47,12 +47,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-VSLLM_BASE_URL = os.getenv("VSLLM_BASE_URL", "https://api.vsllm.com/v1")
+LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://integrate.api.nvidia.com/v1")
 
 
 class ChatRequest(BaseModel):
     message: str
-    model: Optional[str] = "deepseek-v4-flash-free"
+    model: Optional[str] = "meta/llama-3.1-8b-instruct"
 
 
 @app.get("/")
@@ -60,15 +60,15 @@ async def health_check():
     return {
         "status": "online",
         "bio_loaded": len(state.bio_content) > 0,
-        "api_key_configured": os.getenv("VSLLM_API_KEY") is not None,
+        "api_key_configured": os.getenv("LLM_API_KEY") is not None,
     }
 
 
 @app.post("/chat")
 async def chat(request: ChatRequest):
-    api_key = os.getenv("VSLLM_API_KEY")
+    api_key = os.getenv("LLM_API_KEY")
     if not api_key:
-        print("CRITICAL: VSLLM_API_KEY is missing!")
+        print("CRITICAL: LLM_API_KEY is missing!")
         raise HTTPException(status_code=500, detail="API Key not configured.")
 
     system_prompt = f"""You are Babu B, a Full Stack & AI Developer. 
@@ -97,7 +97,7 @@ MY BACKGROUND:
     async with httpx.AsyncClient() as client:
         try:
             response = await client.post(
-                f"{VSLLM_BASE_URL}/chat/completions",
+                f"{LLM_BASE_URL}/chat/completions",
                 headers={
                     "Authorization": f"Bearer {api_key}",
                     "Content-Type": "application/json",
@@ -113,7 +113,7 @@ MY BACKGROUND:
 
             if response.status_code != 200:
                 error_detail = response.text
-                print(f"VSLLM Error ({response.status_code}): {error_detail}")
+                print(f"LLM Error ({response.status_code}): {error_detail}")
                 raise HTTPException(
                     status_code=response.status_code,
                     detail=f"AI service error: {error_detail}",

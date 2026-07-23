@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './ChatBot.css';
 
+const API_URL = import.meta.env.DEV ? 'http://localhost:8000' : (import.meta.env.VITE_API_URL || 'https://babu-portfolio-gsp5.onrender.com');
+
 const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
@@ -58,7 +60,7 @@ const ChatBot = () => {
         // I will just send the current message to the backend as specified in the plan.
 
         try {
-            const response = await fetch('https://babu-portfolio-gsp5.onrender.com/chat', {
+            const response = await fetch(`${API_URL}/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: input })

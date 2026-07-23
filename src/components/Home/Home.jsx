@@ -6,7 +6,7 @@ import { LiquidMetalButton } from '../ui/liquid-metal-button';
 
 const Home = () => {
   const handleDownload = () => {
-    window.open("https://drive.google.com/file/d/1mBN6ajP7a70U85v5MIuyLdBpkZiiFoFe/view?usp=drive_link", "_blank");
+    window.open("https://drive.google.com/file/d/1qu2HEYOC6TGPfiMTZdnowMKxOI5ltmvh/view?usp=drive_link", "_blank");
   };
 
   return (

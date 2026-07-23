@@ -24,3 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .worktrees/
+dist/
+_ul*
+nul
+tmp.txt
